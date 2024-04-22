@@ -47,9 +47,9 @@ const ModelCard = forwardRef(
           objectPosition={'top'}
           w={'100%'}
           h={'100%'}
-          borderTopRadius={'16px'}
           className='no-drag'
           userSelect={'none'}
+          borderTopRadius={props.borderTopRadius || '16px'}
         />
         <Tags tags={tags} />
       </VStack>
@@ -62,7 +62,7 @@ const ModelCard = forwardRef(
             {bio}
           </Text>
         </Box>
-        <Flex mt='2' gap='1' justifySelf={'flex-end'} >
+        <Flex mt='2' gap='1' justifySelf={'flex-end'}>
           <Button
             bg={'primary'}
             color={'white'}
