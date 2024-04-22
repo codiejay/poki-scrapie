@@ -1,0 +1,11 @@
+.hide_choose_file {
+  /* display: none; */
+}
+
+.hide_choose_file ::-webkit-file-upload-button {
+  display: none;
+}
+
+.hide_choose_file ::file-upload-button {
+  display: none;
+}
