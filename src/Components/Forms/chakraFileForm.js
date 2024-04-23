@@ -26,6 +26,7 @@ export const FileInput = ({
           as={'span'}
           textDecor={'underline'}
           color={'red.300'}
+          display={{ base: 'block', '2xl': 'inline' }}
         >
           {props?.see_sample}
         </Text>
