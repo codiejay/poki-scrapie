@@ -3,7 +3,7 @@ import { TextInput } from '../Forms/chakraTextForm';
 import { FileInput } from '../Forms/chakraFileForm';
 import { SpinnerIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
-
+import animation from '../../app/animation.module.css';
 export const ModelForm = () => {
   // form data
   const [nickName, setNickName] = useState('');
@@ -18,7 +18,10 @@ export const ModelForm = () => {
   const [bankNumber, setBankNumber] = useState('');
   const [bankAccountName, setBankAccountName] = useState('');
 
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = async () => {
+    setLoading(true);
     console.log({
       nickName,
       sexToy,
@@ -32,6 +35,10 @@ export const ModelForm = () => {
       bankNumber,
       bankAccountName,
     });
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
   };
 
   return (
@@ -119,12 +126,13 @@ export const ModelForm = () => {
         BE MADE DIRECTLY HERE
       </Text>
 
-      <Grid gridTemplateColumns={'repeat(2, 1fr)'} gap={'37px'}>
+      <Grid gridTemplateColumns={{ base: '1fr', xl: '1fr 1fr' }} gap={'37px'}>
         <TextInput
           label='Bank Name'
           placeholder='First Bank'
           value={bankName}
           onChange={(e) => setBankName(e.target.value)}
+          w={{ base: 'full', xl: '70%' }}
         />
 
         <TextInput
@@ -156,7 +164,9 @@ export const ModelForm = () => {
         onClick={handleSubmit}
       >
         <Text>Submit</Text>
-        <SpinnerIcon rotate={'360deg'} />
+        {loading && (
+          <SpinnerIcon rotate={'360deg'} className={animation.spin} />
+        )}
       </Button>
     </VStack>
   );
