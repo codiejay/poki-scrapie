@@ -14,7 +14,7 @@ const ModelSection = () => {
         justifyContent={"flex-start"}
         alignItems={"flex-start"}
       >
-        <Flex gap={"2.25rem"}>
+        <Flex gap={"2.25rem"} display={{base: "none", md: "flex"}}>
           <Box
             display={"flex"}
             alignItems={"center"}
@@ -104,6 +104,7 @@ const ModelSection = () => {
           gap={"4.5rem"}
           flexWrap={"wrap"}
           gridTemplateColumns={"repeat(4, 1fr)"}
+          justifyContent={{ base: "center", lg: "flex-start" }}
         >
           {Models.map((model, key) => (
             <ModelCard
@@ -111,7 +112,7 @@ const ModelSection = () => {
               img={model.cvcIMG}
               bio={model.bio}
               tags={model.tags}
-              w="400px"
+              w={{base: "100%", md: "400px"}}
               h="500px"
               borderTopRadius={1}
               key={key}

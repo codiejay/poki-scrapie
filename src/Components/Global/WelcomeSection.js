@@ -4,12 +4,12 @@ import ModelCard from "../ModelCard";
 
 export const WelcomeSection = () => {
   return (
-    <Flex mt={10}>
-      <VStack w="50%" alignItems={"flex-start"} gap={30} px={5}>
-        <Heading w="50%" color="white" fontFamily="Clashreg" fontSize={"35px"}>
+    <Flex mt={10} flexDir={{base: 'column', md: 'row'}} gap={{base: 10, md: 0}}>
+      <VStack w={{base: 'full', md: '50%'}} alignItems={"flex-start"} gap={30} px={5}>
+        <Heading w={{base: 'full', md: '50%'}} color="white" fontFamily="Clashreg" fontSize={"35px"}>
           100% Access To Top Professional Video Chat Girls In Nigeria
         </Heading>
-        <Text w="50%" color="white" fontFamily="Clashmid" fontSize={"1rem"}>
+        <Text w={{base: 'full', md: '50%'}} color="white" fontFamily="Clashmid" fontSize={"1rem"}>
           <Text as={"span"} color={"primary"} fontFamily="Clashreg">
             CodeVideoCall™
           </Text>
@@ -17,7 +17,7 @@ export const WelcomeSection = () => {
           Our Policy that covers you.
         </Text>
       </VStack>
-      <VStack w="50%">
+      <VStack w={{base: 'full', md: '50%'}} pl={{base: 5, md: 0}}>
         <HStack w={"100%"}>
           <Text color="white" flexShrink={0}>
             Top performing models
@@ -45,7 +45,7 @@ export const WelcomeSection = () => {
               img={model.cvcIMG}
               bio={model.bio}
               tags={model.tags}
-              w="400px"
+              w={{base: "250px", md: "400px"}}
               h="500px"
               key={key}
             />
