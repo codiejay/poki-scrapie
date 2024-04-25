@@ -1,6 +1,6 @@
 'use client';
 
-import ModelSection from '@/Components/Global/modelSection';
+import ModelSection from '@/Components/Global/ModelSection';
 import { WelcomeSection } from '@/Components/Global/WelcomeSection';
 import { Flex } from '@chakra-ui/react';
 

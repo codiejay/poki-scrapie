@@ -34,7 +34,13 @@ const AgePopup = () => {
   };
 
   useEffect(() => {
-    checkAgeVerification();
+
+    // if user is viewing the parental control page, don't show the popup
+    if (window.location.pathname === '/parental-control') {
+      return;
+    } else {
+      checkAgeVerification();
+    }
   }, []);
   return (
     <>
@@ -113,7 +119,7 @@ const AgePopup = () => {
             </Flex>
 
             <Text fontSize={'1rem'} mt={'4'}>
-              Our <Link color={'primary'}>parental controls</Link> page explains
+              Our <Link color={'primary'} href={'/parental-control'}>parental controls</Link> page explains
               how you can easily block access to this site.
             </Text>
           </Flex>
