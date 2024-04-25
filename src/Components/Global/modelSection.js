@@ -1,8 +1,7 @@
 import { Models } from "@/utils/modelJSON";
-import { Box, Button, Flex, Icon, VStack } from "@chakra-ui/react";
-import { GoTriangleDown } from "react-icons/go";
-import { VscSettings } from "react-icons/vsc";
+import { Box, Button, Flex, VStack } from "@chakra-ui/react";
 import ModelCard from "../ModelCard";
+import { Filter } from '../Model/filter';
 
 const ModelSection = () => {
   return (
@@ -14,91 +13,7 @@ const ModelSection = () => {
         justifyContent={"flex-start"}
         alignItems={"flex-start"}
       >
-        <Flex gap={"2.25rem"} display={{base: "none", md: "flex"}}>
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"8px"}
-            bg={"white"}
-            fontSize={"10px"}
-            fontWeight={700}
-            px={"12px"}
-            py={"9px"}
-            rounded={"full"}
-            cursor="pointer"
-          >
-            {" "}
-            <Icon transform={"rotate(90deg)"} fill="#000" as={VscSettings} />
-            Filters
-          </Box>
-
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"8px"}
-            bg={"primary"}
-            color={"white"}
-            fontSize={"10px"}
-            fontWeight={700}
-            px={"12px"}
-            py={"9px"}
-            rounded={"full"}
-          >
-            Body Type
-            <Icon as={GoTriangleDown} />
-          </Box>
-
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"8px"}
-            bg={"primary"}
-            color={"white"}
-            fontSize={"10px"}
-            fontWeight={700}
-            px={"12px"}
-            py={"9px"}
-            rounded={"full"}
-          >
-            Sex Toy
-            <Icon as={GoTriangleDown} />
-          </Box>
-
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"8px"}
-            bg={"primary"}
-            color={"white"}
-            fontSize={"10px"}
-            fontWeight={700}
-            px={"12px"}
-            py={"9px"}
-            rounded={"full"}
-          >
-            Price
-            <Icon as={GoTriangleDown} />
-          </Box>
-
-          <Box
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            gap={"8px"}
-            bg={"white"}
-            fontSize={"10px"}
-            fontWeight={700}
-            px={"12px"}
-            py={"9px"}
-            rounded={"full"}
-          >
-            Clear Filters
-          </Box>
-        </Flex>
+        <Filter />
 
         <Flex
           gap={"4.5rem"}
