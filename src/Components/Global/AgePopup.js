@@ -47,7 +47,9 @@ const AgePopup = () => {
       {showAgeVerificationPrompt && (
         <Box
           h={'100vh'}
+          minH={'100%'}
           w={'100vw'}
+          minW={'100%'}
           pos={'fixed'}
           top={0}
           left={0}
@@ -56,7 +58,7 @@ const AgePopup = () => {
           css={{ boxShadow: '0 0 40px 5px rgba(255,255,255,.15)' }}
         >
           <Flex
-            height={'460px'}
+            height={{ base: '100%', md: '460px' }}
             maxW={'750px'}
             w={'100%'}
             py={'4rem'}
@@ -73,7 +75,7 @@ const AgePopup = () => {
             justifyContent={'center'}
             alignItems={'center'}
           >
-            <Text as='h2' fontSize={'2.5rem'} fontWeight={'700'}>
+            <Text as='h2' fontSize={'2.5rem'} lineHeight={{ base: '2.5rem', md: '4rem' }} fontWeight={'700'}>
               This is an adult website
             </Text>
             <Text as='h3' fontSize={'1.25rem'}>
@@ -84,11 +86,11 @@ const AgePopup = () => {
               and you consent to viewing sexually explicit content.
             </Text>
 
-            <Flex gap={'2'} mt={'4'}>
+            <Flex gap={'2'} mt={'4'} w={'100%'} flexDir={{ base: 'column', md: 'row' }}>
               <Button
                 bg={'#1f1f1f'}
                 color={'white'}
-                w={'20rem'}
+                w={{ base: '100%', md: '20rem' }}
                 px={4}
                 py={'1rem'}
                 borderRadius={'lg'}
@@ -104,7 +106,7 @@ const AgePopup = () => {
               <Button
                 bg={'primary'}
                 color={'white'}
-                w={'20rem'}
+                w={{ base: '100%', md: '20rem' }}
                 px={4}
                 py={'1rem'}
                 borderRadius={'lg'}
