@@ -126,17 +126,14 @@ export const ModelForm = () => {
         />
       </Flex>
 
-      <TextInput
-        label='Do You Accept Custom Request '
-        tinylabel='For example, will you be willing to use the customer’s name if they request for this?'
-        placeholder='Yes'
-        width='60px'
-        value={customRequest}
-        onChange={(e) => setCustomRequest(e.target.value)}
-      />
-
       <Flex flexDir={'column'} gap={2}>
-        <Text fontWeight={500}>Do You Accept Custom Request?</Text>
+        <Box>
+          <Text fontWeight={500}>Do You Accept Custom Request?</Text>
+          <Text fontSize={'0.725rem'}>
+            For example, will you be willing to use the customer&apos;s name if
+            they request for this?
+          </Text>
+        </Box>
         <HStack {...group}>
           {sexToyOptions?.map((value) => {
             const radio = customRequestRadioGroup?.getRadioProps({ value });
@@ -191,6 +188,13 @@ export const ModelForm = () => {
         <TextInput
           label='Your Bank Name'
           placeholder='Bella Uche'
+          value={bankAccountName}
+          onChange={(e) => setBankAccountName(e.target.value)}
+        />
+
+        <TextInput
+          label='Telegram Handle / WhatsApp Number'
+          placeholder='+2348080808080'
           value={bankAccountName}
           onChange={(e) => setBankAccountName(e.target.value)}
         />
