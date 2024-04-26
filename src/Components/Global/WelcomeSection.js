@@ -55,7 +55,7 @@ export const WelcomeSection = () => {
               width: "0", // for Internet Explorer, Edge, and Firefox
             },
             scrollbarWidth: "none", // for Firefox
-            "-ms-overflow-style": "none", // for Internet Explorer and Edge
+            "msOverflowStyle": "none", // for Internet Explorer and Edge
           }}
         >
           {Models.map((model, key) => (
