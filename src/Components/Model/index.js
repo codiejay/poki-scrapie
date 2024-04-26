@@ -1,9 +1,19 @@
-import { Button, Flex, Grid, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  HStack,
+  Text,
+  useRadioGroup,
+  VStack,
+} from '@chakra-ui/react';
 import { TextInput } from '../Forms/chakraTextForm';
 import { FileInput } from '../Forms/chakraFileForm';
 import { SpinnerIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 import animation from '../../app/animation.module.css';
+import RadioCard from '../Forms/chakraRadio';
 export const ModelForm = () => {
   // form data
   const [nickName, setNickName] = useState('');
@@ -19,6 +29,20 @@ export const ModelForm = () => {
   const [bankAccountName, setBankAccountName] = useState('');
 
   const [loading, setLoading] = useState(false);
+  const sexToyOptions = ['Yes', 'No'];
+
+  const sexToyRadioGroup = useRadioGroup({
+    name: 'sexToy',
+    defaultValue: 'No',
+    onChange: setSexToy,
+  });
+
+  const customRequestRadioGroup = useRadioGroup({
+    name: 'sexToy',
+    defaultValue: 'No',
+    onChange: setCustomRequest,
+  });
+  const group = sexToyRadioGroup?.getRootProps();
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -62,13 +86,20 @@ export const ModelForm = () => {
       />
 
       <Flex gap={'42px'} justifyContent={'flex-start'} w='full'>
-        <TextInput
-          label='Do you have a sex toy? '
-          placeholder='Yes'
-          width='70px'
-          value={sexToy}
-          onChange={(e) => setSexToy(e.target.value)}
-        />
+        <Flex flexDir={'column'} gap={2}>
+          <Text fontWeight={500}>Do you have a sex toy?</Text>
+          <HStack {...group}>
+            {sexToyOptions?.map((value) => {
+              const radio = sexToyRadioGroup?.getRadioProps({ value });
+              return (
+                <RadioCard key={value} {...radio}>
+                  {value}
+                </RadioCard>
+              );
+            })}
+          </HStack>
+        </Flex>
+
         <TextInput
           label='Height'
           placeholder="5ft'12"
@@ -104,19 +135,34 @@ export const ModelForm = () => {
         onChange={(e) => setCustomRequest(e.target.value)}
       />
 
+      <Flex flexDir={'column'} gap={2}>
+        <Text fontWeight={500}>Do You Accept Custom Request?</Text>
+        <HStack {...group}>
+          {sexToyOptions?.map((value) => {
+            const radio = customRequestRadioGroup?.getRadioProps({ value });
+            return (
+              <RadioCard key={value} {...radio}>
+                {value}
+              </RadioCard>
+            );
+          })}
+        </HStack>
+      </Flex>
+
       <FileInput
         accepts='image'
         label='Add Image (Minimum of 3 images)'
         placeholder={'Select Images'}
-        minFile={3}
+        minfile={3}
+        maxfile={4}
         multiple
         onChange={(e) => setImages(e.target.files)}
       />
       <FileInput
         accepts='video'
-        label='Add Sneak Video (<~6seconds)'
+        label='Add A Sneak Video (<~6seconds)'
         see_sample='See Sample Of A Sneek Video'
-        placeholder={'Select Videos'}
+        placeholder={'Select Video'}
         onChange={(e) => setVideos(e.target.files)}
       />
 

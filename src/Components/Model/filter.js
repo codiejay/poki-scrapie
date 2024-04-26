@@ -16,9 +16,20 @@ export const Filter = () => {
     return str.replace(/ /g, '_').toLowerCase();
   };
 
+  const selectedOption = (optionsInArray) => {
+    console.log(replaceSpacesWithUnderscoreInLowerCase(optionsInArray));
+    // return filterQueriesOptions[
+    //   replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
+    // ];
+  };
 
   return (
-    <Flex gap={'2.25rem'} display={{ base: 'flex', md: 'flex' }} flexWrap={'wrap'} zIndex={1}>
+    <Flex
+      gap={'2.25rem'}
+      display={{ base: 'flex', md: 'flex' }}
+      flexWrap={'wrap'}
+      zIndex={1}
+    >
       <Button
         display={'flex'}
         alignItems={'center'}
@@ -88,7 +99,24 @@ export const Filter = () => {
                   {filterQueriesOptions[
                     replaceSpacesWithUnderscoreInLowerCase(option)
                   ]?.map((option, key) => (
-                    <Text key={key} px={'12px'} py={'9px'} _hover={{ color: 'white', bg: 'primary' }}>{option}</Text>
+                    <Text
+                      key={key}
+                      px={'12px'}
+                      py={'9px'}
+                      // first option has a rounded top
+                      roundedTop={key === 0 ? 'xl' : 'none'}
+                      roundedBottom={
+                        key == selectedOption(option)?.length - 1
+                          ? 'xl'
+                          : 'none'
+                      }
+                      _hover={{ color: 'white', bg: 'primary' }}
+                    >
+                      {option}
+                      {selectedOption(
+                        replaceSpacesWithUnderscoreInLowerCase(option)
+                      )}
+                    </Text>
                   ))}
                 </Flex>
               )}
