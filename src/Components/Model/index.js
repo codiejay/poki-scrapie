@@ -27,7 +27,7 @@ export const ModelForm = () => {
   const [bankName, setBankName] = useState('');
   const [bankNumber, setBankNumber] = useState('');
   const [bankAccountName, setBankAccountName] = useState('');
-
+  const [contactInformation, setContactInformation] = useState('');
   const [loading, setLoading] = useState(false);
   const sexToyOptions = ['Yes', 'No'];
 
@@ -85,7 +85,7 @@ export const ModelForm = () => {
         onChange={(e) => setNickName(e.target.value)}
       />
 
-      <Flex gap={'42px'} justifyContent={'flex-start'} w='full'>
+      <Flex gap={'42px'} justifyContent={'flex-start'} w='full' flexDir={{ base: 'column', sm: 'row' }}>
         <Flex flexDir={'column'} gap={2}>
           <Text fontWeight={500}>Do you have a sex toy?</Text>
           <HStack {...group}>
@@ -195,8 +195,8 @@ export const ModelForm = () => {
         <TextInput
           label='Telegram Handle / WhatsApp Number'
           placeholder='+2348080808080'
-          value={bankAccountName}
-          onChange={(e) => setBankAccountName(e.target.value)}
+          value={contactInformation}
+          onChange={(e) => setContactInformation(e.target.value)}
         />
       </Grid>
 

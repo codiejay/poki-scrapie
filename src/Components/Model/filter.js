@@ -10,17 +10,18 @@ export const Filter = () => {
   const filterQueriesOptions = {
     body_type: ['Bulk', 'Average', 'Athletic', 'Lean', 'Slim'],
     sex_toy: ['Yes', 'No'],
-    price: ['1000', '2000', '3000'],
+    price: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
   };
   const replaceSpacesWithUnderscoreInLowerCase = (str) => {
     return str.replace(/ /g, '_').toLowerCase();
   };
 
-  const selectedOption = (optionsInArray) => {
-    console.log(replaceSpacesWithUnderscoreInLowerCase(optionsInArray));
-    // return filterQueriesOptions[
-    //   replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
-    // ];
+  const selectedOptionLength = (optionsInArray) => {
+    const filterQueriesOptionsLength =
+      filterQueriesOptions[
+        replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
+      ]?.length;
+    return filterQueriesOptionsLength;
   };
 
   return (
@@ -106,16 +107,17 @@ export const Filter = () => {
                       // first option has a rounded top
                       roundedTop={key === 0 ? 'xl' : 'none'}
                       roundedBottom={
-                        key == selectedOption(option)?.length - 1
+                        key ==
+                        selectedOptionLength(
+                          replaceSpacesWithUnderscoreInLowerCase(openOption)
+                        ) -
+                          1
                           ? 'xl'
                           : 'none'
                       }
                       _hover={{ color: 'white', bg: 'primary' }}
                     >
                       {option}
-                      {selectedOption(
-                        replaceSpacesWithUnderscoreInLowerCase(option)
-                      )}
                     </Text>
                   ))}
                 </Flex>
