@@ -4,20 +4,39 @@ import ModelCard from "../ModelCard";
 
 export const WelcomeSection = () => {
   return (
-    <Flex mt={10} flexDir={{base: 'column', md: 'row'}} gap={{base: 10, md: 0}}>
-      <VStack w={{base: 'full', md: '50%'}} alignItems={"flex-start"} gap={30} px={5}>
-        <Heading w={{base: 'full', md: '50%'}} color="white" fontFamily="Clashreg" fontSize={"35px"}>
+    <Flex
+      mt={10}
+      flexDir={{ base: "column", md: "row" }}
+      gap={{ base: 10, md: 0 }}
+    >
+      <VStack
+        w={{ base: "full", md: "50%" }}
+        alignItems={"flex-start"}
+        gap={30}
+        px={5}
+      >
+        <Heading
+          w={{ base: "full", md: "50%" }}
+          color="white"
+          fontFamily="Clashreg"
+          fontSize={"35px"}
+        >
           100% Access To Top Professional Video Chat Girls In Nigeria
         </Heading>
-        <Text w={{base: 'full', md: '50%'}} color="white" fontFamily="Clashmid" fontSize={"1rem"}>
+        <Text
+          w={{ base: "full", md: "50%" }}
+          color="white"
+          fontFamily="Clashmid"
+          fontSize={"1rem"}
+        >
           <Text as={"span"} color={"primary"} fontFamily="Clashreg">
-            CodeVideoCall™
+            Balaclava Girls™
           </Text>
           is 100% Responsible for any refund if due. Your cash is 100% safe. See
           Our Policy that covers you.
         </Text>
       </VStack>
-      <VStack w={{base: 'full', md: '50%'}} pl={{base: 5, md: 0}}>
+      <VStack w={{ base: "full", md: "50%" }} pl={{ base: 5, md: 0 }}>
         <HStack w={"100%"}>
           <Text color="white" flexShrink={0}>
             Top performing models
@@ -45,7 +64,7 @@ export const WelcomeSection = () => {
               img={model.cvcIMG}
               bio={model.bio}
               tags={model.tags}
-              w={{base: "250px", md: "400px"}}
+              w={{ base: "250px", md: "400px" }}
               h="500px"
               key={key}
             />

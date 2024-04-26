@@ -1,7 +1,7 @@
 import { Models } from "@/utils/modelJSON";
 import { Box, Button, Flex, VStack } from "@chakra-ui/react";
+import { Filter } from "../Model/filter";
 import ModelCard from "../ModelCard";
-import { Filter } from '../Model/filter';
 
 const ModelSection = () => {
   return (
@@ -16,7 +16,10 @@ const ModelSection = () => {
         <Filter />
 
         <Flex
-          gap={"4.5rem"}
+          gap={{
+            base: "4",
+            md: "6",
+          }}
           flexWrap={"wrap"}
           gridTemplateColumns={"repeat(4, 1fr)"}
           justifyContent={{ base: "center", lg: "flex-start" }}
@@ -27,7 +30,7 @@ const ModelSection = () => {
               img={model.cvcIMG}
               bio={model.bio}
               tags={model.tags}
-              w={{base: "100%", md: "400px"}}
+              w={{ base: "100%", md: "400px" }}
               h="500px"
               borderTopRadius={1}
               key={key}
