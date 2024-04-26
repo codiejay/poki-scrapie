@@ -9,25 +9,37 @@ import { ModelForm } from '@/Components/Model';
 const RegisterAsAModel = () => {
   const [step, setStep] = useState(1);
   return (
-    <Flex pt='12' px='12' flexDir={{base: 'column', md: 'row'}} gap={{base: 10, lg: 0}}>
-      <VStack w={{base: 'full', md: '50%'}} align='start'>
-        <Heading color='white' fontFamily='Clashreg' fontSize={{base: '40px', md: '50px', lg: '60px'}} w='70%'>
-          Become A VC Model, For Free.
-        </Heading>
-        <Flex gap='2' fontFamily='Clashmid' color='white'>
-          <Box bg='primary' borderRadius='4px' p='2'>
-            Pick your availability
-          </Box>
-          <Box bg='primary' borderRadius='4px' p='2'>
-            Set your price
-          </Box>
-          <Box bg='primary' borderRadius='4px' p='2'>
-            Get paid
-          </Box>
-        </Flex>
-      </VStack>
+    <Flex
+      pt='12'
+      px='12'
+      flexDir={{ base: 'column', md: 'row' }}
+      gap={{ base: 10, lg: 0 }}
+    >
+      <Box w={{ base: 'full', md: '50%' }}>
+        <VStack w={{ base: 'full', md: '50%' }} align='start' pos={{ base: 'relative', md: 'fixed' }}>
+          <Heading
+            color='white'
+            fontFamily='Clashreg'
+            fontSize={{ base: '40px', md: '50px', lg: '60px' }}
+            w='70%'
+          >
+            Become A VC Model, For Free.
+          </Heading>
+          <Flex gap='2' fontFamily='Clashmid' color='white'>
+            <Box bg='primary' borderRadius='4px' p='2'>
+              Pick your availability
+            </Box>
+            <Box bg='primary' borderRadius='4px' p='2'>
+              Set your price
+            </Box>
+            <Box bg='primary' borderRadius='4px' p='2'>
+              Get paid
+            </Box>
+          </Flex>
+        </VStack>
+      </Box>
       {step === 0 && (
-        <VStack w={{base: 'full', md: '50%'}} justify='center'>
+        <VStack w={{ base: 'full', md: '50%' }} justify='center'>
           <Button
             onClick={() => {
               createUserWithGoogle();

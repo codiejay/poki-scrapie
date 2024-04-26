@@ -10,15 +10,27 @@ export const Filter = () => {
   const filterQueriesOptions = {
     body_type: ['Bulk', 'Average', 'Athletic', 'Lean', 'Slim'],
     sex_toy: ['Yes', 'No'],
-    price: ['1000', '2000', '3000'],
+    price: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
   };
   const replaceSpacesWithUnderscoreInLowerCase = (str) => {
     return str.replace(/ /g, '_').toLowerCase();
   };
 
+  const selectedOptionLength = (optionsInArray) => {
+    const filterQueriesOptionsLength =
+      filterQueriesOptions[
+        replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
+      ]?.length;
+    return filterQueriesOptionsLength;
+  };
 
   return (
-    <Flex gap={'2.25rem'} display={{ base: 'flex', md: 'flex' }} flexWrap={'wrap'} zIndex={1}>
+    <Flex
+      gap={'2.25rem'}
+      display={{ base: 'flex', md: 'flex' }}
+      flexWrap={'wrap'}
+      zIndex={1}
+    >
       <Button
         display={'flex'}
         alignItems={'center'}
@@ -88,7 +100,25 @@ export const Filter = () => {
                   {filterQueriesOptions[
                     replaceSpacesWithUnderscoreInLowerCase(option)
                   ]?.map((option, key) => (
-                    <Text key={key} px={'12px'} py={'9px'} _hover={{ color: 'white', bg: 'primary' }}>{option}</Text>
+                    <Text
+                      key={key}
+                      px={'12px'}
+                      py={'9px'}
+                      // first option has a rounded top
+                      roundedTop={key === 0 ? 'xl' : 'none'}
+                      roundedBottom={
+                        key ==
+                        selectedOptionLength(
+                          replaceSpacesWithUnderscoreInLowerCase(openOption)
+                        ) -
+                          1
+                          ? 'xl'
+                          : 'none'
+                      }
+                      _hover={{ color: 'white', bg: 'primary' }}
+                    >
+                      {option}
+                    </Text>
                   ))}
                 </Flex>
               )}

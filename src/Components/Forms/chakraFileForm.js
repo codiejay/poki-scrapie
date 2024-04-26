@@ -9,15 +9,20 @@ export const FileInput = ({
   ...props
 }) => {
   const fileSelect = useRef(null);
-  const minFile = props.minFile || 1;
+  const minFile = props.minfile || 1;
+  const maxFiles = props.maxfile || 2;
 
   const onFileChange = (e) => {
-    console.log(e.target.files);
     if (e.target.files.length < minFile) {
       alert(`Please select at least ${minFile} files`);
       return;
     }
+    if (e.target.files.length > maxFiles) {
+      alert(`Please select at most ${maxFiles} files`);
+      return;
+    }
   };
+
   return (
     <FormControl w='max-content' {...controlProps}>
       <FormLabel {...labelProps}>

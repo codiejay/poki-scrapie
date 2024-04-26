@@ -1,9 +1,19 @@
-import { Button, Flex, Grid, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  HStack,
+  Text,
+  useRadioGroup,
+  VStack,
+} from '@chakra-ui/react';
 import { TextInput } from '../Forms/chakraTextForm';
 import { FileInput } from '../Forms/chakraFileForm';
 import { SpinnerIcon } from '@chakra-ui/icons';
 import { useState } from 'react';
 import animation from '../../app/animation.module.css';
+import RadioCard from '../Forms/chakraRadio';
 export const ModelForm = () => {
   // form data
   const [nickName, setNickName] = useState('');
@@ -17,8 +27,22 @@ export const ModelForm = () => {
   const [bankName, setBankName] = useState('');
   const [bankNumber, setBankNumber] = useState('');
   const [bankAccountName, setBankAccountName] = useState('');
-
+  const [contactInformation, setContactInformation] = useState('');
   const [loading, setLoading] = useState(false);
+  const sexToyOptions = ['Yes', 'No'];
+
+  const sexToyRadioGroup = useRadioGroup({
+    name: 'sexToy',
+    defaultValue: 'No',
+    onChange: setSexToy,
+  });
+
+  const customRequestRadioGroup = useRadioGroup({
+    name: 'sexToy',
+    defaultValue: 'No',
+    onChange: setCustomRequest,
+  });
+  const group = sexToyRadioGroup?.getRootProps();
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -61,14 +85,21 @@ export const ModelForm = () => {
         onChange={(e) => setNickName(e.target.value)}
       />
 
-      <Flex gap={'42px'} justifyContent={'flex-start'} w='full'>
-        <TextInput
-          label='Do you have a sex toy? '
-          placeholder='Yes'
-          width='70px'
-          value={sexToy}
-          onChange={(e) => setSexToy(e.target.value)}
-        />
+      <Flex gap={'42px'} justifyContent={'flex-start'} w='full' flexDir={{ base: 'column', sm: 'row' }}>
+        <Flex flexDir={'column'} gap={2}>
+          <Text fontWeight={500}>Do you have a sex toy?</Text>
+          <HStack {...group}>
+            {sexToyOptions?.map((value) => {
+              const radio = sexToyRadioGroup?.getRadioProps({ value });
+              return (
+                <RadioCard key={value} {...radio}>
+                  {value}
+                </RadioCard>
+              );
+            })}
+          </HStack>
+        </Flex>
+
         <TextInput
           label='Height'
           placeholder="5ft'12"
@@ -95,28 +126,40 @@ export const ModelForm = () => {
         />
       </Flex>
 
-      <TextInput
-        label='Do You Accept Custom Request '
-        tinylabel='For example, will you be willing to use the customer’s name if they request for this?'
-        placeholder='Yes'
-        width='60px'
-        value={customRequest}
-        onChange={(e) => setCustomRequest(e.target.value)}
-      />
+      <Flex flexDir={'column'} gap={2}>
+        <Box>
+          <Text fontWeight={500}>Do You Accept Custom Request?</Text>
+          <Text fontSize={'0.725rem'}>
+            For example, will you be willing to use the customer&apos;s name if
+            they request for this?
+          </Text>
+        </Box>
+        <HStack {...group}>
+          {sexToyOptions?.map((value) => {
+            const radio = customRequestRadioGroup?.getRadioProps({ value });
+            return (
+              <RadioCard key={value} {...radio}>
+                {value}
+              </RadioCard>
+            );
+          })}
+        </HStack>
+      </Flex>
 
       <FileInput
         accepts='image'
         label='Add Image (Minimum of 3 images)'
         placeholder={'Select Images'}
-        minFile={3}
+        minfile={3}
+        maxfile={4}
         multiple
         onChange={(e) => setImages(e.target.files)}
       />
       <FileInput
         accepts='video'
-        label='Add Sneak Video (<~6seconds)'
+        label='Add A Sneak Video (<~6seconds)'
         see_sample='See Sample Of A Sneek Video'
-        placeholder={'Select Videos'}
+        placeholder={'Select Video'}
         onChange={(e) => setVideos(e.target.files)}
       />
 
@@ -147,6 +190,13 @@ export const ModelForm = () => {
           placeholder='Bella Uche'
           value={bankAccountName}
           onChange={(e) => setBankAccountName(e.target.value)}
+        />
+
+        <TextInput
+          label='Telegram Handle / WhatsApp Number'
+          placeholder='+2348080808080'
+          value={contactInformation}
+          onChange={(e) => setContactInformation(e.target.value)}
         />
       </Grid>
 
