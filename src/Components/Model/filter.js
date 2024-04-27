@@ -5,14 +5,23 @@ import { useState } from 'react';
 
 export const Filter = () => {
   const [open, setOpen] = useState(false);
-  const options = ['Body Type', 'Sex Toy', 'Price'];
+  const options = ['Body Type', 'Sex Toy', 'Price Tag'];
   const [openOption, setOpenOption] = useState('');
   const filterQueriesOptions = {
     body_type: ['Bulk', 'Average', 'Athletic', 'Lean', 'Slim'],
     sex_toy: ['Yes', 'No'],
-    price: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
+    price_tag: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
   };
+  const [selectedFilters, setSelectedFilters] = useState({
+    bodyType: '',
+    sexToy: '',
+    price_tag: '',
+  });
+
   const replaceSpacesWithUnderscoreInLowerCase = (str) => {
+    // if no space, return as it is
+    console.log(str);
+    // if (!str.includes(' ')) return str.toLowerCase();
     return str.replace(/ /g, '_').toLowerCase();
   };
 
@@ -22,6 +31,35 @@ export const Filter = () => {
         replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
       ]?.length;
     return filterQueriesOptionsLength;
+  };
+
+  const handleOptionClick = (option) => {
+    setSelectedFilters({
+      ...selectedFilters,
+      [replaceSpacesWithUnderscoreInLowerCase(openOption)]: option,
+    });
+    setOpenOption('');
+  };
+
+  const clearAllFilters = () => {
+    setSelectedFilters({
+      bodyType: '',
+      sexToy: '',
+      price: '',
+    });
+    setOpenOption('');
+    setOpen(false);
+  }
+
+  const checkIfLastOption = (key, openOption) => {
+    if (
+      key ==
+      selectedOptionLength(replaceSpacesWithUnderscoreInLowerCase(openOption)) -
+        1
+    ) {
+      return true;
+    }
+    return false;
   };
 
   return (
@@ -75,8 +113,9 @@ export const Filter = () => {
                   setOpenOption(option);
                 }
               }}
-            >
-              {option}
+            > 
+            {/* {option === 'Price Tag' ? 'Price' : option} */}
+              {selectedFilters[replaceSpacesWithUnderscoreInLowerCase(option)] ?? option}
               <Icon
                 as={openOption === option ? GoTriangleUp : GoTriangleDown}
               />
@@ -104,18 +143,12 @@ export const Filter = () => {
                       key={key}
                       px={'12px'}
                       py={'9px'}
-                      // first option has a rounded top
                       roundedTop={key === 0 ? 'xl' : 'none'}
                       roundedBottom={
-                        key ==
-                        selectedOptionLength(
-                          replaceSpacesWithUnderscoreInLowerCase(openOption)
-                        ) -
-                          1
-                          ? 'xl'
-                          : 'none'
+                        checkIfLastOption(key, openOption) ? 'xl' : 'none'
                       }
                       _hover={{ color: 'white', bg: 'primary' }}
+                      onClick={() => handleOptionClick(option)}
                     >
                       {option}
                     </Text>
@@ -136,10 +169,7 @@ export const Filter = () => {
             px={'12px'}
             py={'9px'}
             rounded={'full'}
-            onClick={() => {
-              setOpen(false);
-              setOpenOption('');
-            }}
+            onClick={clearAllFilters}
           >
             Clear Filters
           </Button>
