@@ -3,7 +3,6 @@ import { PageContainer } from "@/Components/Global/PageContainer";
 import { Models } from "@/utils/modelJSON";
 import { Box, Flex, VStack, useDisclosure } from "@chakra-ui/react";
 import { useState } from "react";
-import { IoMdCloseCircleOutline } from "react-icons/io";
 import "../../../public/base.css";
 import "../../../public/embla.css";
 import "../../../public/sandbox.css";
@@ -35,7 +34,7 @@ const Model = () => {
           <VStack
             align="start"
             maxW={{
-              base: "90%",
+              base: "100%",
               lg: "60%",
             }}
             h="fit-content"
@@ -43,11 +42,13 @@ const Model = () => {
             <Box
               color="white"
               fontFamily="Clashbold"
-              p="2"
+              p="0.6"
+              px="2"
               bg="primary"
               w="100%"
+              fontSize="12px"
             >
-              <IoMdCloseCircleOutline fontSize="30px" cursor="pointer" />
+              Close
             </Box>
             <ModelClientCard
               model={model}

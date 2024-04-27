@@ -1,5 +1,6 @@
 "use client";
 import {
+  Button,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -7,6 +8,7 @@ import {
   ModalHeader,
   ModalOverlay,
 } from "@chakra-ui/react";
+import { IoMdVideocam } from "react-icons/io";
 
 export function ModelVideoModal(props) {
   return (
@@ -25,6 +27,23 @@ export function ModelVideoModal(props) {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
+          <Button
+            p="2"
+            fontWeight="normal"
+            _hover={{
+              bg: "primary",
+            }}
+            fontFamily={"Clashmid"}
+            w="100%"
+            h="fit-content"
+            fontSize="19px"
+            bg="primary"
+            color="white"
+            mt={24}
+            rightIcon={<IoMdVideocam />}
+          >
+            Connect with {props.name}
+          </Button>
         </ModalBody>
       </ModalContent>
     </Modal>
