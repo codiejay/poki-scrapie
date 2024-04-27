@@ -1,17 +1,44 @@
 "use client";
 import { PageContainer } from "@/Components/Global/PageContainer";
 import { Models } from "@/utils/modelJSON";
-import { Box, Flex, Heading, Image, VStack } from "@chakra-ui/react";
+import { Box, Flex, VStack, useDisclosure } from "@chakra-ui/react";
+import { useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import "../../../public/base.css";
+import "../../../public/embla.css";
+import "../../../public/sandbox.css";
+import { ModelClientCard } from "../../Components/Model/ModelClientCard";
 
 const Model = () => {
   const model = Models[0];
+  const modelTags = Object.keys(model.tags);
+  const [showCustomRequestForm, setShowCustomRequestForm] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const OPTIONS = { loop: true };
+  const SLIDE_COUNT = 5;
+  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <PageContainer>
       <Flex w="100%">
-        <Flex align="center" w="50%" m="0 auto" flexDir="column" mt={12}>
-          <VStack align="start" h="80vh" borderBottom="1px solid red">
+        <Flex
+          align="center"
+          w={{
+            lg: "50%",
+            base: "100%",
+          }}
+          m="0 auto"
+          flexDir="column"
+          mt={12}
+        >
+          <VStack
+            align="start"
+            maxW={{
+              base: "90%",
+              lg: "60%",
+            }}
+            h="fit-content"
+          >
             <Box
               color="white"
               fontFamily="Clashbold"
@@ -21,10 +48,15 @@ const Model = () => {
             >
               <IoMdCloseCircleOutline fontSize="30px" cursor="pointer" />
             </Box>
-            <Image alt={`${model.name} on Balaclava Girls`} src="cvcTest.png" />
-            <Heading color="white" fontFamily="Clashmid">
-              {model.name}
-            </Heading>
+            <ModelClientCard
+              model={model}
+              showCustomRequestForm={showCustomRequestForm}
+              setShowCustomRequestForm={setShowCustomRequestForm}
+              isOpen={isOpen}
+              onOpen={onOpen}
+              onClose={onClose}
+              OPTIONS={OPTIONS}
+            ></ModelClientCard>
           </VStack>
         </Flex>
       </Flex>
