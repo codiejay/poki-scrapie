@@ -23,13 +23,14 @@ const Model = () => {
       <Flex w="100%">
         <Flex
           align="center"
-          w={{
-            lg: "50%",
+          maxW={{
+            lg: "40%",
+            md: "50%",
             base: "100%",
           }}
           m="0 auto"
           flexDir="column"
-          mt={12}
+          mt={4}
         >
           <VStack
             align="start"

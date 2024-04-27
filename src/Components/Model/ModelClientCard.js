@@ -35,7 +35,13 @@ function ModelPerks(props) {
 export function ModelClientCard(props) {
   return (
     <Box>
-      <Box pos="relative" mb="6">
+      <Box
+        pos="relative"
+        mb={{
+          lg: "6",
+          base: "2",
+        }}
+      >
         <EmblaCarousel slides={props.model.images} options={props.OPTIONS} />
         <Button
           position="absolute"
@@ -70,7 +76,14 @@ export function ModelClientCard(props) {
       <Heading color="white" fontFamily="Clashmid">
         {props.model.name}
       </Heading>
-      <Text mb="24" color="white" fontFamily="Clashmid">
+      <Text
+        mb={{
+          lg: "24",
+          base: "10",
+        }}
+        color="white"
+        fontFamily="Clashmid"
+      >
         {props.model.bio}
       </Text>
       <ModelPerks tags={props.model.tags}></ModelPerks>
