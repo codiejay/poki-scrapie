@@ -32,6 +32,28 @@ function ModelPerks(props) {
   );
 }
 
+function ConnectWithModelBttn(props) {
+  return (
+    <Button
+      p="2"
+      fontWeight="normal"
+      _hover={{
+        bg: "primary",
+      }}
+      fontFamily={"Clashmid"}
+      w="100%"
+      h="fit-content"
+      fontSize="19px"
+      bg="primary"
+      color="white"
+      mt={24}
+      rightIcon={<IoMdVideocam />}
+    >
+      Connect with {props.name}
+    </Button>
+  );
+}
+
 export function ModelClientCard(props) {
   return (
     <Box>
@@ -123,23 +145,7 @@ export function ModelClientCard(props) {
           fontSize="14px"
         />
       </VStack>
-      <Button
-        p="2"
-        fontWeight="normal"
-        _hover={{
-          bg: "primary",
-        }}
-        fontFamily={"Clashmid"}
-        w="100%"
-        h="fit-content"
-        fontSize="19px"
-        bg="primary"
-        color="white"
-        mt={24}
-        rightIcon={<IoMdVideocam />}
-      >
-        Connect with {props.model.name}
-      </Button>
+      <ConnectWithModelBttn name={props.model.name}></ConnectWithModelBttn>
     </Box>
   );
 }
