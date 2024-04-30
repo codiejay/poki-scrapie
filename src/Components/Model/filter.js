@@ -1,45 +1,33 @@
 import { Box, Button, Flex, Icon, Text } from '@chakra-ui/react';
 import { VscSettings } from 'react-icons/vsc';
 import { GoTriangleDown, GoTriangleUp } from 'react-icons/go';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import FilterBy from './filterBy.js';
 
 export const Filter = () => {
   const [open, setOpen] = useState(false);
-  const options = ['Body Type', 'Sex Toy', 'Price Tag'];
   const [openOption, setOpenOption] = useState('');
-  const filterQueriesOptions = {
-    body_type: ['Bulk', 'Average', 'Athletic', 'Lean', 'Slim'],
-    sex_toy: ['Yes', 'No'],
-    price_tag: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
+
+  const body_type = {
+    name: 'Body Type',
+    options: ['Bulk', 'Average', 'Athletic', 'Lean', 'Slim'],
   };
+
+  const sex_toy = {
+    name: 'Sex Toy',
+    options: ['Yes', 'No'],
+  };
+
+  const price = {
+    name: 'Price Tag',
+    options: ['10,000', '20,000', '30,000', '40,000', '50,000+'],
+  };
+
   const [selectedFilters, setSelectedFilters] = useState({
     bodyType: '',
     sexToy: '',
     price_tag: '',
   });
-
-  const replaceSpacesWithUnderscoreInLowerCase = (str) => {
-    // if no space, return as it is
-    console.log(str);
-    // if (!str.includes(' ')) return str.toLowerCase();
-    return str.replace(/ /g, '_').toLowerCase();
-  };
-
-  const selectedOptionLength = (optionsInArray) => {
-    const filterQueriesOptionsLength =
-      filterQueriesOptions[
-        replaceSpacesWithUnderscoreInLowerCase(optionsInArray)
-      ]?.length;
-    return filterQueriesOptionsLength;
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedFilters({
-      ...selectedFilters,
-      [replaceSpacesWithUnderscoreInLowerCase(openOption)]: option,
-    });
-    setOpenOption('');
-  };
 
   const clearAllFilters = () => {
     setSelectedFilters({
@@ -49,18 +37,12 @@ export const Filter = () => {
     });
     setOpenOption('');
     setOpen(false);
-  }
-
-  const checkIfLastOption = (key, openOption) => {
-    if (
-      key ==
-      selectedOptionLength(replaceSpacesWithUnderscoreInLowerCase(openOption)) -
-        1
-    ) {
-      return true;
-    }
-    return false;
   };
+
+  const handleFilterBtnClick = () => {
+    setOpen(!open);
+    setOpenOption('');
+  }
 
   return (
     <Flex
@@ -81,7 +63,7 @@ export const Filter = () => {
         py={'9px'}
         rounded={'full'}
         cursor='pointer'
-        onClick={() => setOpen(!open)}
+        onClick={handleFilterBtnClick}
       >
         <Icon transform={'rotate(90deg)'} fill='#000' as={VscSettings} />
         Filters
@@ -89,75 +71,37 @@ export const Filter = () => {
 
       {open && (
         <Flex gap={'2.25rem'} flexWrap={'wrap'}>
-          {options.map((option, key) => (
-            <Box
-              key={key}
-              display={'flex'}
-              alignItems={'center'}
-              justifyContent={'center'}
-              height={'40px'}
-              minW={'100px'}
-              px={'12px'}
-              gap={'8px'}
-              pos={'relative'}
-              bg={'primary'}
-              color={'white'}
-              fontSize={'0.825rem'}
-              fontWeight={700}
-              rounded={'full'}
-              cursor={'pointer'}
-              onClick={() => {
-                if (option === openOption) {
-                  setOpenOption('');
-                } else {
-                  setOpenOption(option);
-                }
-              }}
-            > 
-            {/* {option === 'Price Tag' ? 'Price' : option} */}
-              {selectedFilters[replaceSpacesWithUnderscoreInLowerCase(option)] ?? option}
-              <Icon
-                as={openOption === option ? GoTriangleUp : GoTriangleDown}
-              />
-
-              {openOption === option && (
-                <Flex
-                  flexDir={'column'}
-                  gap={'8px'}
-                  pos={'absolute'}
-                  top={'45px'}
-                  left={0}
-                  width={'100%'}
-                  bg={'white'}
-                  color={'black'}
-                  fontSize={'0.825rem'}
-                  fontWeight={700}
-                  cursor={'pointer'}
-                  zIndex={1}
-                  rounded={'xl'}
-                >
-                  {filterQueriesOptions[
-                    replaceSpacesWithUnderscoreInLowerCase(option)
-                  ]?.map((option, key) => (
-                    <Text
-                      key={key}
-                      px={'12px'}
-                      py={'9px'}
-                      roundedTop={key === 0 ? 'xl' : 'none'}
-                      roundedBottom={
-                        checkIfLastOption(key, openOption) ? 'xl' : 'none'
-                      }
-                      _hover={{ color: 'white', bg: 'primary' }}
-                      onClick={() => handleOptionClick(option)}
-                    >
-                      {option}
-                    </Text>
-                  ))}
-                </Flex>
-              )}
-            </Box>
-          ))}
-
+          <FilterBy
+            filterName={body_type.name}
+            filterValues={body_type.options}
+            value={selectedFilters.bodyType}
+            handleFilter={(value) =>
+              setSelectedFilters({ ...selectedFilters, bodyType: value })
+            }
+            // props to close other options and keep track of which one is open
+            selectedOption={openOption}
+            closeOtherOptions={(name) => setOpenOption(name)}
+          />
+          <FilterBy
+            filterName={sex_toy.name}
+            filterValues={sex_toy.options}
+            value={selectedFilters.sexToy}
+            handleFilter={(value) =>
+              setSelectedFilters({ ...selectedFilters, sexToy: value })
+            }
+            selectedOption={openOption}
+            closeOtherOptions={(name) => setOpenOption(name)}
+          />
+          <FilterBy
+            filterName={price.name}
+            filterValues={price.options}
+            value={selectedFilters.price_tag}
+            handleFilter={(value) =>
+              setSelectedFilters({ ...selectedFilters, price_tag: value })
+            }
+            selectedOption={openOption}
+            closeOtherOptions={(name) => setOpenOption(name)}
+          />
           <Button
             display={'flex'}
             alignItems={'center'}

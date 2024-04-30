@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const AgePopup = () => {
   const [showAgeVerificationPrompt, setShowAgeVerificationPrompt] =
-    useState(false);
+    useState(true);
 
   const ageVerificationKey = "ageVerified";
   const ageVerificationExpiryKey = "ageVerifiedExpiry";

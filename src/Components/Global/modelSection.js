@@ -1,7 +1,7 @@
 import { Models } from "@/utils/modelJSON";
 import { Box, Button, Flex, VStack } from "@chakra-ui/react";
-import { Filter } from "../Model/filter";
 import ModelCard from "../ModelCard";
+import { Filter } from '../Model/filter';
 
 const ModelSection = () => {
   return (
