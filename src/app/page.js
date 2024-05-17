@@ -8,7 +8,7 @@ export const Home = () => {
     <Flex
       flexDir="column"
       h={{
-        base: "100vh",
+        base: "100%",
         md: "100vh",
       }}
     >

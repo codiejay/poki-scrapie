@@ -40,7 +40,7 @@ export const ComingSoon = () => {
           >
             <Flex
               w={{
-                base: "250px",
+                base: "330px",
                 lg: "360px",
               }}
               h={{
@@ -60,7 +60,7 @@ export const ComingSoon = () => {
           >
             <Flex
               w={{
-                base: "250px",
+                base: "330px",
                 lg: "360px",
               }}
               h={{
@@ -82,7 +82,7 @@ export const ComingSoon = () => {
           >
             <Flex
               w={{
-                base: "250px",
+                base: "330px",
                 lg: "360px",
               }}
               h={{
