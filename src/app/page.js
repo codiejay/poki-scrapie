@@ -1,14 +1,18 @@
 "use client";
 
-import { WelcomeSection } from "@/Components/Global/WelcomeSection";
-import ModelSection from "@/Components/Global/modelSection";
+import { ComingSoon } from "@/Components/ComingSoon/ComingSoon";
 import { Flex } from "@chakra-ui/react";
 
 export const Home = () => {
   return (
-    <Flex flexDir="column">
-      <WelcomeSection />
-      <ModelSection />
+    <Flex
+      flexDir="column"
+      h={{
+        base: "100vh",
+        md: "100vh",
+      }}
+    >
+      <ComingSoon />
     </Flex>
   );
 };
