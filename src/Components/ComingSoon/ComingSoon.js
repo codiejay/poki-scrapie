@@ -16,7 +16,14 @@ export const ComingSoon = () => {
       w="100%"
       flexDirection="column"
       alignItems="center"
-      justifyContent="center"
+      pt={{
+        base: "40px",
+        lg: 0,
+      }}
+      justifyContent={{
+        base: "flex-start",
+        lg: "center",
+      }}
     >
       <Flex alignItems="center" w="90%" m="0 auto" justifyContent="center">
         <Grid
