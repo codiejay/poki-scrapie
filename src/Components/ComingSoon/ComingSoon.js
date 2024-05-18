@@ -148,7 +148,7 @@ export const ComingSoon = () => {
                 style={{
                   width: "100%", // Ensures the video covers the full width of the Flex container
                   height: "100%", // Ensures the video covers the full height of the Flex container
-                  objectFit: "center", // Ensures the video covers the area without distorting aspect ratio
+                  objectFit: "cover", // Ensures the video covers the area without distorting aspect ratio
                   position: "absolute", // Positions video correctly within the Flex container
                   top: 0,
                   left: 0,
