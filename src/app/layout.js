@@ -5,31 +5,33 @@ export default function RootLayout({ children }) {
     <html>
       {/* Insert site icon below */}
       <head>
+        <link rel="icon" href="seoimagehere" />
         <link
           rel="icon"
-          href="https://i.ibb.co/pfHsW41/Screenshot-2024-05-18-at-16-56-09.png"
-        />
-        <link
-          rel="icon"
-          href="https://i.ibb.co/pfHsW41/Screenshot-2024-05-18-at-16-56-09.png"
+          href="seoimagehere"
           type="image/x-icon"
           sizes="16x16"
         ></link>
 
-        {/* Add SEO */}
         <meta
           property="og:image"
           itemprop="image primaryImageOfPage"
-          content="https://i.ibb.co/dMksgGG/Screenshot-2024-05-18-at-16-58-53.png"
+          content="seoimagehere"
         ></meta>
-        <meta property="og:description" content="Bluebreakfast is cooking." />
+        {/* Add site title */}
+        <title>R. H. Foundation</title>
+        <meta property="og:description" content="Tref is cooking." />
 
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Bluebreakfast" />
+        <meta name="twitter:title" content="Tref" />
         <meta name="twitter:description" content="OG" />
       </head>
-      <body style={{ backgroundColor: "black" }}>
+      <body
+        style={{
+          backgroundColor: "#F9FAFB",
+        }}
+      >
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

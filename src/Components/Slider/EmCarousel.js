@@ -33,34 +33,6 @@ const EmblaCarousel = (props) => {
   return (
     <section className="embla">
       <Box mb="12">
-        <div className="embla__controls">
-          <Flex gap={2} my={2}>
-            <Flex
-              align="center"
-              justify="center"
-              boxSize="30px"
-              border="1px solid white"
-              borderRadius="90px"
-              color="white"
-              cursor="pointer"
-              onClick={onPrevButtonClick}
-            >
-              <MdOutlineNavigateBefore fontSize="19px" />
-            </Flex>
-            <Flex
-              align="center"
-              justify="center"
-              boxSize="30px"
-              border="1px solid white"
-              borderRadius="90px"
-              color="white"
-              cursor="pointer"
-              onClick={onNextButtonClick}
-            >
-              <MdOutlineNavigateNext fontSize="19px" />
-            </Flex>
-          </Flex>
-        </div>
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
             {slides.map((slide, index) => (
@@ -77,6 +49,34 @@ const EmblaCarousel = (props) => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="embla__controls">
+          <Flex gap={2} my={2}>
+            <Flex
+              align="center"
+              justify="center"
+              boxSize="30px"
+              border="1px solid #D2A63C"
+              borderRadius="90px"
+              color="#D2A63C"
+              cursor="pointer"
+              onClick={onPrevButtonClick}
+            >
+              <MdOutlineNavigateBefore fontSize="19px" />
+            </Flex>
+            <Flex
+              align="center"
+              justify="center"
+              boxSize="30px"
+              border="1px solid #D2A63C"
+              borderRadius="90px"
+              color="#D2A63C"
+              cursor="pointer"
+              onClick={onNextButtonClick}
+            >
+              <MdOutlineNavigateNext fontSize="19px" />
+            </Flex>
+          </Flex>
         </div>
       </Box>
     </section>

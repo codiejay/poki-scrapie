@@ -4,12 +4,12 @@ export const Fonts = () => (
   <Global
     styles={`
       @font-face {
-        font-family: 'Heading';
-        src: url('/fontTan.ttf');
+        font-family: 'primary';
+        src: url('/primary.ttf');
       }
       @font-face {
-        font-family: 'Paragraph';
-        src: url('/fontUsa.ttf');
+        font-family: 'secondary';
+        src: url('/secondary.ttf');
       }
       `}
   />
