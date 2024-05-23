@@ -1,7 +1,16 @@
-import { Flex, HStack, Heading, Img, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  HStack,
+  Heading,
+  Img,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { PrimaryBttn } from "../Header/PrimaryBttn";
+import { ShowcaseModal } from "../Modals/ShowcaseModal";
 
 export const Showcase = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex pb="24px" pt="80px" w="100%">
       <HStack w="100%" gap="40px">
@@ -29,9 +38,17 @@ export const Showcase = () => {
           alt="Children in a classroom"
           borderRadius="12px"
         >
-          <Img cursor="pointer" src="/play.png" boxSize="40px" />
+          <Img
+            onClick={() => {
+              onOpen();
+            }}
+            cursor="pointer"
+            src="/play.png"
+            boxSize="40px"
+          />
         </Flex>
       </HStack>
+      <ShowcaseModal isOpen={isOpen} onClose={onClose} />
     </Flex>
   );
 };
