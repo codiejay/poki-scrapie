@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
 
         <meta
           property="og:image"
-          itemprop="image primaryImageOfPage"
+          itemProp="image primaryImageOfPage"
           content="seoimagehere"
         ></meta>
         {/* Add site title */}
