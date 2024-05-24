@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import React from "react";
 import "../../../public/embla.css";
 import EmblaCarousel from "../Slider/EmCarousel";
 
@@ -11,7 +10,7 @@ const images = [
 
 export const ImgSlider = () => {
   return (
-    <Box h="440px" w="50%">
+    <Box h="444px" w="611px">
       <EmblaCarousel
         slides={images}
         options={{

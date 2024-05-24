@@ -1,12 +1,11 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
-import React from "react";
 
 export const Figures = ({ num, text }) => {
   return (
-    <Flex flexDir="column" align="center" justify="center">
+    <Flex flexDir="column" align="center" justify="center" gap="12px">
       <Heading
         fontFamily="secondary"
-        fontWeight="600"
+        fontWeight="black"
         color="#1A202C"
         fontSize="40px"
       >
@@ -14,9 +13,9 @@ export const Figures = ({ num, text }) => {
       </Heading>
       <Text
         fontFamily="primary"
-        fontWeight="normal"
+        fontWeight="500"
         color="#1A202C"
-        fontSize="16px"
+        fontSize="18px"
       >
         {text}
       </Text>
@@ -31,15 +30,17 @@ export const FiguresQuotes = () => {
       bg="url(/fgBg.png)"
       bgPos="center"
       bgSize="cover"
-      justify="space-between"
+      justify="center"
       w="100%"
       h="206px"
       align="center"
     >
-      <Figures num="#100m+" text="Money donated" />
-      <Figures num="560+" text="Donations Received" />
-      <Figures num="120+" text="Successful Campaign" />
-      <Figures num="#100m+" text="Charity in last year" />
+      <Flex w="60%" justify="center" gap="110px">
+        <Figures num="#100m+" text="Money donated" />
+        <Figures num="560+" text="Donations Received" />
+        <Figures num="120+" text="Successful Campaign" />
+        <Figures num="#100m+" text="Charity in last year" />
+      </Flex>
     </Flex>
   );
 };

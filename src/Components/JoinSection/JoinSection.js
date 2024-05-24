@@ -1,10 +1,25 @@
 import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
-import React from "react";
 import { PrimaryBttn, SecondaryBttn } from "../Header/PrimaryBttn";
 
 export const JoinSection = () => {
   return (
-    <Flex bg="#1E2023" p="80px">
+    <Flex
+      bg="#1E2023"
+      p="80px"
+      position="relative"
+      //Add before section
+      _before={{
+        content: '""',
+        position: "absolute",
+        top: 0,
+        right: 0,
+        bottom: 0,
+        background: "url(/thread.png)",
+        backgroundSize: "cover",
+        width: "300px",
+        height: "100%",
+      }}
+    >
       <Flex w="60%" m="0 auto" align="center" justify="center">
         <VStack color="white" align="center" justify="center">
           <Heading fontFamily="secondary" fontSize="36px">

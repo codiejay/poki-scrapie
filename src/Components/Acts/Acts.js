@@ -8,7 +8,6 @@ import {
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
 import { MdCheckCircle } from "react-icons/md";
 import { ImgSlider } from "../Global/ImgSlider";
 
@@ -58,7 +57,7 @@ export const Acts = () => {
           <ImgSlider />
           <Flex w="50%" flexDir="column" gap="20px">
             <Text
-              fontSize="15px"
+              fontSize="20px"
               fontFamily="primary"
               fontWeight="400"
               colo="#4a5568"

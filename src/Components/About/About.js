@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Text, VStack } from "@chakra-ui/react";
-import React from "react";
 
 export const About = () => {
   return (
@@ -10,6 +9,7 @@ export const About = () => {
       flexDir="column"
       gap={12}
       bg="white"
+      pb="70px"
     >
       <Box
         maxW="1440px"

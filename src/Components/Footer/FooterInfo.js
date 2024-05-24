@@ -8,7 +8,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
 
 export const FooterInfo = () => {
   return (
@@ -26,7 +25,7 @@ export const FooterInfo = () => {
         <Flex direction={{ base: "column", md: "row" }} gap="20px">
           <Box w="50%">
             <Image w="87px" src="/whileLogo.png" alt="R. H. Foundation" />
-            <Text w="40%" fontFamily="primary" fontSize="14px">
+            <Text w="60%" fontFamily="primary" fontSize="14px">
               Empowering Future Leaders: Providing Quality Education and
               Lifelong Learning Opportunities for Every Childs Success
             </Text>
@@ -76,12 +75,12 @@ export const FooterInfo = () => {
                   bgSize="cover"
                 />
                 <Box
-                  bg="url(/twitter.png) no-repeat center"
+                  bg="url(/Twitter.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
                 />
                 <Box
-                  bg="url(/instagram.png) no-repeat center"
+                  bg="url(/Instagram.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
                 />

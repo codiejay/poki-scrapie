@@ -51,7 +51,7 @@ const EmblaCarousel = (props) => {
           </div>
         </div>
         <div className="embla__controls">
-          <Flex gap={2} my={2}>
+          <Flex gap={2} mt="-4">
             <Flex
               align="center"
               justify="center"
