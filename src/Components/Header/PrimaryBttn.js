@@ -12,6 +12,7 @@ export function PrimaryBttn({ bttnText, fontWeight }) {
       _hover={{
         bg: "#e0a03f",
       }}
+      px="12"
     >
       {bttnText}
     </Button>

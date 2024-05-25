@@ -12,7 +12,13 @@ import {
 export const Subscribe = () => {
   return (
     <Flex>
-      <Flex justify="space-between" w="100%" align="center">
+      <Flex
+        justify="space-between"
+        w="100%"
+        align="end"
+        borderBottom="1px solid white"
+        pb="100px"
+      >
         <VStack
           pos="relative"
           color="white"
@@ -40,12 +46,17 @@ export const Subscribe = () => {
           </Text>
           <FormControl display="flex" gap="20px">
             <Input
+              border="none"
               fontFamily="primary"
               bg="#4C4C4C"
               _placeholder={{
-                color: "white",
+                color: "#c9c9c9",
+                fontFamily: "primary",
+                fontWeight: "500",
+                fontsize: "14px",
               }}
-              placeholder="Enter your email"
+              placeholder="Enter your email address"
+              py="15px"
             />
             <Button
               w="fit-content"

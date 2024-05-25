@@ -30,7 +30,34 @@ export const FooterInfo = () => {
               Lifelong Learning Opportunities for Every Childs Success
             </Text>
           </Box>
-          <Stack w="60%" direction={{ base: "column", md: "row" }} spacing={10}>
+          <Stack
+            position="relative"
+            _before={{
+              content: '""',
+              position: "absolute",
+              bottom: "-67%",
+              left: "-140%",
+              background: "url(/subCloudPink.png)",
+              backgroundSize: "cover",
+              width: "500px",
+              height: "500px",
+              opacity: "0.8",
+            }}
+            _after={{
+              content: '""',
+              position: "absolute",
+              bottom: "145%",
+              left: "-140%",
+              background: "url(/subCloudOrange.png)",
+              backgroundSize: "cover",
+              width: "400px",
+              height: "400px",
+              opacity: "0.8",
+            }}
+            w="60%"
+            direction={{ base: "column", md: "row" }}
+            spacing={10}
+          >
             <Box>
               <Text fontWeight="bold" fontFamily="primary" mb={6}>
                 Knowledge Vault
@@ -73,16 +100,28 @@ export const FooterInfo = () => {
                   bg="url(/facebook.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
+                  onClick={() => {
+                    window.open("https://www.facebook.com/");
+                  }}
+                  cursor="pointer"
                 />
                 <Box
                   bg="url(/Twitter.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
+                  onClick={() => {
+                    window.open("https://www.facebook.com/");
+                  }}
+                  cursor="pointer"
                 />
                 <Box
                   bg="url(/Instagram.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
+                  onClick={() => {
+                    window.open("https://www.facebook.com/");
+                  }}
+                  cursor="pointer"
                 />
               </Flex>
             </Box>
@@ -94,6 +133,7 @@ export const FooterInfo = () => {
           align="center"
           justify="space-between"
           w="100%"
+          pos="relative"
         >
           <Text textAlign="center">© TREF 2024. All right reserved</Text>
           <Text textAlign="center">Web designed by ProficientWale</Text>

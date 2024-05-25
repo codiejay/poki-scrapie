@@ -4,23 +4,31 @@ import {
   Flex,
   Heading,
   List,
-  ListIcon,
   ListItem,
   Text,
 } from "@chakra-ui/react";
-import { MdCheckCircle } from "react-icons/md";
+import { IoIosCheckmark } from "react-icons/io";
 import { ImgSlider } from "../Global/ImgSlider";
 
 function ActsList({ act }) {
   return (
-    <ListItem>
-      <ListIcon
+    <ListItem display="flex" gap="18px" justify="center">
+      <Flex
+        align="center"
+        justify="center"
+        w="27.05px"
+        h="27.05px"
+        bg="#f5f2e7"
+        borderRadius="50%"
+      >
+        <IoIosCheckmark color="#d2a63c" fontSize="20px" />
+      </Flex>
+      <Text
         fontSize="18px"
         fontFamily="primary"
-        as={MdCheckCircle}
-        color="#D2A63C"
-      />
-      <Text display="inline-block" color="#4A5568">
+        display="inline-block"
+        color="#4A5568"
+      >
         {act}
       </Text>
     </ListItem>
@@ -38,7 +46,7 @@ export const Acts = () => {
       bg="#F9FAF"
       pb="12"
     >
-      <Box maxW="1440px" w="100%" m="0 auto" px="100px">
+      <Box maxW="1440px" w="100%" m="0 auto" px="100px" pb="70px">
         <Flex w="50%" m="0 auto" align="center" justify="center" mb="12">
           <Divider w="20%" orientation="horizontal" borderColor="#D2A63C" />
           <Heading
@@ -55,18 +63,18 @@ export const Acts = () => {
         </Flex>
         <Flex w="100%" gap="30px">
           <ImgSlider />
-          <Flex w="50%" flexDir="column" gap="20px">
+          <Flex w="50%" flexDir="column" gap="32px">
             <Text
               fontSize="20px"
               fontFamily="primary"
-              fontWeight="400"
-              colo="#4a5568"
+              fontWeight="500"
+              colo="#495568"
             >
               Every child deserves a healthy start in life, the opportunity to
               learn and protection from harm. Yet, an estimated 5.4 million
               children under age 5 still die each year from preventable causes
             </Text>
-            <List spacing={4} mt="12">
+            <List spacing="19px">
               <ActsList act="Cover the school fees for children who cannot afford them." />
               <ActsList act="Bring hope and opportunities to underprivileged children." />
               <ActsList act="Ensure children receive a quality education." />

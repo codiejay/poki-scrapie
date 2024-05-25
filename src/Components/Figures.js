@@ -5,7 +5,7 @@ export const Figures = ({ num, text }) => {
     <Flex flexDir="column" align="center" justify="center" gap="12px">
       <Heading
         fontFamily="secondary"
-        fontWeight="black"
+        fontWeight="700"
         color="#1A202C"
         fontSize="40px"
       >
@@ -34,8 +34,10 @@ export const FiguresQuotes = () => {
       w="100%"
       h="206px"
       align="center"
+      borderTop="2px solid #E2E8F0"
+      borderBottom="2px solid #E2E8F0"
     >
-      <Flex w="60%" justify="center" gap="110px">
+      <Flex justify="center" gap="110px">
         <Figures num="#100m+" text="Money donated" />
         <Figures num="560+" text="Donations Received" />
         <Figures num="120+" text="Successful Campaign" />

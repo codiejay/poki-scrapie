@@ -7,7 +7,6 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import React from "react";
 
 const teamData = [
   {
@@ -30,7 +29,7 @@ const teamData = [
 const TeamCard = ({ img, name, position }) => {
   return (
     <Flex
-      borderRadius="12"
+      borderRadius="30px"
       w="375px"
       h="468px"
       bg={`url(${img}) no-repeat center`}
@@ -77,8 +76,9 @@ export const Team = () => {
         px="100px"
         display="flex"
         gap="12"
-        pb="12"
         flexDir="column"
+        pt="70px"
+        pb="100px"
       >
         <HStack justifyContent="space-between" alignItems="start">
           <Heading
