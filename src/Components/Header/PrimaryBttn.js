@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/react";
 
-export function PrimaryBttn({ bttnText, fontWeight }) {
+export function PrimaryBttn({ bttnText, fontWeight, props }) {
+  console.log(props);
   return (
     <Button
       w="fit-content"
@@ -13,13 +14,16 @@ export function PrimaryBttn({ bttnText, fontWeight }) {
         bg: "#e0a03f",
       }}
       px="12"
+      h="54px"
+      py="0"
+      {...props}
     >
       {bttnText}
     </Button>
   );
 }
 
-export function SecondaryBttn({ bttnText }) {
+export function SecondaryBttn({ bttnText, ...props }) {
   return (
     <Button
       w="fit-content"
@@ -28,6 +32,8 @@ export function SecondaryBttn({ bttnText }) {
       fontSize="15px"
       fontWeight="400"
       bg="white"
+      h="54px"
+      {...props}
     >
       {bttnText}
     </Button>

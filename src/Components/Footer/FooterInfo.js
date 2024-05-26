@@ -19,7 +19,6 @@ export const FooterInfo = () => {
         px="100px"
         display="flex"
         gap="12"
-        pb="12"
         flexDir="column"
       >
         <Flex direction={{ base: "column", md: "row" }} gap="20px">
@@ -56,7 +55,7 @@ export const FooterInfo = () => {
             }}
             w="60%"
             direction={{ base: "column", md: "row" }}
-            spacing={10}
+            spacing="80px"
           >
             <Box>
               <Text fontWeight="bold" fontFamily="primary" mb={6}>
@@ -127,6 +126,7 @@ export const FooterInfo = () => {
             </Box>
           </Stack>
         </Flex>
+        <Box h="0.5px" w="100%" bg="white" />
         <HStack
           fontFamily="primary"
           fontSize="12px"
@@ -136,7 +136,13 @@ export const FooterInfo = () => {
           pos="relative"
         >
           <Text textAlign="center">© TREF 2024. All right reserved</Text>
-          <Text textAlign="center">Web designed by ProficientWale</Text>
+          <Text
+            as={Link}
+            href="https://x.com/ProficientWale"
+            textAlign="center"
+          >
+            Web designed by ProficientWale
+          </Text>
         </HStack>
       </Box>
     </Box>

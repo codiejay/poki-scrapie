@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Divider,
   Flex,
   HStack,
   Heading,
@@ -77,20 +78,30 @@ export const Team = () => {
         display="flex"
         gap="12"
         flexDir="column"
-        pt="70px"
+        pt="40px"
         pb="100px"
       >
         <HStack justifyContent="space-between" alignItems="start">
-          <Heading
-            fontSize="56px"
-            fontFamily="secondary"
-            fontWeight="600"
-            color="#1A202C"
-            w="fit-content"
-          >
-            Team
-          </Heading>
-          <VStack w="50%" spacing={4} align="start">
+          <HStack w="40%" align="start" gap="60px">
+            <Heading
+              fontSize="56px"
+              fontFamily="secondary"
+              fontWeight="600"
+              color="#1A202C"
+              w="fit-content"
+            >
+              Team
+            </Heading>
+            <Divider
+              mt="2"
+              w="100%"
+              h="30px"
+              borderColor="#D2A63C"
+              opacity="0.5"
+            />
+          </HStack>
+
+          <VStack w="50%" spacing={4} align="start" pt="5">
             <Text
               fontWeight="400"
               fontFamily="primary"
@@ -126,6 +137,7 @@ export const Team = () => {
             border="1px solid #C1C3C7"
             fontSize="12px"
             px="14"
+            height="42px"
           >
             View More
           </Button>

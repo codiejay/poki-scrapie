@@ -57,19 +57,22 @@ export const Subscribe = () => {
               }}
               placeholder="Enter your email address"
               py="15px"
+              h="48px"
             />
+            {/* <PrimaryBttn bttnText="Sign Up" height="48px" /> */}
             <Button
               w="fit-content"
               color="white"
               fontFamily="primary"
               fontSize="15px"
-              fontWeight="600"
+              fontWeight="400"
               bg="#D2A63C"
               _hover={{
                 bg: "#e0a03f",
               }}
               px="12"
-              py="4"
+              h="48px"
+              py="0"
             >
               Sign Up
             </Button>
