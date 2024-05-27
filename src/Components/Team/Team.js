@@ -69,6 +69,7 @@ export const Team = () => {
       flexDir="column"
       gap={12}
       bg="white"
+      id="volunteers"
     >
       <Box
         maxW="1440px"

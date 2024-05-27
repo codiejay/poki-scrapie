@@ -32,6 +32,7 @@ export function SecondaryBttn({ bttnText, ...props }) {
       fontSize="15px"
       fontWeight="400"
       bg="white"
+      px="12"
       h="54px"
       {...props}
     >

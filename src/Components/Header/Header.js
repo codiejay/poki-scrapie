@@ -1,6 +1,5 @@
-import { Box, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Link, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { PrimaryBttn } from "./PrimaryBttn";
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,17 +45,35 @@ export const Header = () => {
         <Image w="87px" src="/trefLogo.png" alt="R. H. Foundation" />
       </Box>
       <Flex fontFamily="primary" fontWeight="500" fontSize="16px" gap="8">
-        <Link href="/what-we-do" style={{ textDecoration: "none" }}>
+        <Link href="/#acts" style={{ textDecoration: "none" }}>
           <Text>What We Do</Text>
         </Link>
-        <Link href="/about-us" style={{ textDecoration: "none" }}>
+        <Link href="/#about" style={{ textDecoration: "none" }}>
           <Text>About Us</Text>
         </Link>
-        <Link href="/volunteers" style={{ textDecoration: "none" }}>
+        <Link href="/#volunteers" style={{ textDecoration: "none" }}>
           <Text>Volunteers</Text>
         </Link>
       </Flex>
-      <PrimaryBttn bttnText="Donate now" />
+      {/* <PrimaryBttn bttnText="Donate now" /> */}
+      <Button
+        w="fit-content"
+        fontFamily="primary"
+        fontSize="15px"
+        fontWeight="500"
+        _hover={{
+          bg: "transparent",
+        }}
+        border="1.5px solid"
+        bg={isScrolled ? "#D2A63C" : "transparent"}
+        borderColor={isScrolled ? "transparent" : "#D2A63C"}
+        color={isScrolled ? "white" : "#D2A63C"}
+        px="12"
+        h="54px"
+        py="0"
+      >
+        Donate now
+      </Button>
     </Flex>
   );
 };
