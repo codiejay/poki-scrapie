@@ -36,7 +36,7 @@ export const About = () => {
               color="#1A202C"
               fontSize="40px"
               mb="6"
-              w={["70%", "70%", "auto"]}
+              w={["100%", "100%", "auto"]}
             >
               About Us TREF
             </Heading>

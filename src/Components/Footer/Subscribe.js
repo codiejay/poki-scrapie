@@ -13,6 +13,7 @@ export const Subscribe = () => {
   return (
     <Flex>
       <Flex
+        px={["10px", "15px", "0"]}
         justify="space-between"
         w="100%"
         align={["start", "start", "end"]}

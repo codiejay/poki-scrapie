@@ -21,9 +21,19 @@ export const JoinSection = () => {
         opacity: [0.1, 0.2, 1],
         zIndex: "0",
       }}
+      px={["10px", "15px", "100px"]}
     >
-      <Flex w="60%" m="0 auto" align="center" justify="center">
-        <VStack color="white" align="center" justify="center">
+      <Flex
+        w={["100%", "100%", "60%"]}
+        m="0 auto"
+        align="center"
+        justify="center"
+      >
+        <VStack
+          color="white"
+          align="center"
+          justify={["start", "start", "center"]}
+        >
           <Heading fontFamily="secondary" fontSize="36px">
             Together, We Can Make Education Accessible
           </Heading>
