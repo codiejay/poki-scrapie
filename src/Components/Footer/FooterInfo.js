@@ -140,6 +140,7 @@ export const FooterInfo = () => {
             as={Link}
             href="https://x.com/ProficientWale"
             textAlign="center"
+            target="_blank"
           >
             Web designed by ProficientWale
           </Text>
