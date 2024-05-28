@@ -18,6 +18,8 @@ export const JoinSection = () => {
         backgroundSize: "cover",
         width: "300px",
         height: "100%",
+        opacity: [0.1, 0.2, 1],
+        zIndex: "0",
       }}
     >
       <Flex w="60%" m="0 auto" align="center" justify="center">

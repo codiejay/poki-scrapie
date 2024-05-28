@@ -15,27 +15,28 @@ export const Subscribe = () => {
       <Flex
         justify="space-between"
         w="100%"
-        align="end"
+        align={["start", "start", "end"]}
         borderBottom="1px solid white"
         pb="100px"
+        flexDir={["column", "column", "row"]}
       >
         <VStack
           pos="relative"
           color="white"
           align="start"
-          w="40%"
+          w={["95%", "95%", "40%"]}
           spacing={4}
-          _before={{
-            content: '""',
-            position: "absolute",
-            top: "-80%",
-            left: "0",
-            background: "url(/subCloud.png)",
-            backgroundSize: "cover",
-            width: "500px",
-            height: "500px",
-            opacity: "0.8",
-          }}
+          // _before={{
+          //   content: '""',
+          //   position: "absolute",
+          //   top: "-80%",
+          //   left: "0",
+          //   background: "url(/subCloud.png)",
+          //   backgroundSize: "cover",
+          //   width: "500px",
+          //   height: "500px",
+          //   opacity: "0.8",
+          // }}
         >
           <Heading fontSize="24px" fontFamily="primary">
             Subscribe to our newsletter
@@ -80,7 +81,7 @@ export const Subscribe = () => {
         </VStack>
         <Box
           bg="url(/subscribe.png) "
-          w="512px"
+          w={["370px", "370px", "512px"]}
           h="269px"
           bgPos="center"
           bgSize="contain"

@@ -10,7 +10,7 @@ const images = [
 
 export const ImgSlider = () => {
   return (
-    <Box h="444px" w="611px">
+    <Box h="444px" w={["100%", "611px"]}>
       <EmblaCarousel
         slides={images}
         options={{

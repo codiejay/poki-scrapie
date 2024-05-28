@@ -13,9 +13,13 @@ export const Showcase = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Flex pb="24px" pt="80px" w="100%">
-      <HStack w="100%" gap="40px">
-        <Flex flexDir="column" w="50%" gap="32px">
-          <Heading fontFamily="secondary" fontWeight="800" fontSize="70px">
+      <HStack w="100%" gap="40px" flexDir={["column", "row"]}>
+        <Flex flexDir="column" w={["100%", "50%"]} gap="32px">
+          <Heading
+            fontFamily="secondary"
+            fontWeight="800"
+            fontSize={["45px", "70px"]}
+          >
             Join Us In Educating The Next Generation
           </Heading>
           <Text
@@ -33,7 +37,7 @@ export const Showcase = () => {
           h="477px"
           align="center"
           justify="center"
-          w="50%"
+          w={["100%", "50%"]}
           bg="url(/showcaseImg.png) no-repeat center center"
           alt="Children in a classroom"
           borderRadius="12px"

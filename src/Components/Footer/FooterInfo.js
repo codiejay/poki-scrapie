@@ -16,13 +16,13 @@ export const FooterInfo = () => {
         maxW="1440px"
         w="100%"
         m="0 auto"
-        px="100px"
+        px={["10px", "15px", "100px"]}
         display="flex"
         gap="12"
         flexDir="column"
       >
         <Flex direction={{ base: "column", md: "row" }} gap="20px">
-          <Box w="50%">
+          <Box w={["95%", "95%", "50%"]}>
             <Image w="87px" src="/whileLogo.png" alt="R. H. Foundation" />
             <Text w="60%" fontFamily="primary" fontSize="14px">
               Empowering Future Leaders: Providing Quality Education and
@@ -31,28 +31,28 @@ export const FooterInfo = () => {
           </Box>
           <Stack
             position="relative"
-            _before={{
-              content: '""',
-              position: "absolute",
-              bottom: "-67%",
-              left: "-140%",
-              background: "url(/subCloudPink.png)",
-              backgroundSize: "cover",
-              width: "500px",
-              height: "500px",
-              opacity: "0.8",
-            }}
-            _after={{
-              content: '""',
-              position: "absolute",
-              bottom: "145%",
-              left: "-140%",
-              background: "url(/subCloudOrange.png)",
-              backgroundSize: "cover",
-              width: "400px",
-              height: "400px",
-              opacity: "0.8",
-            }}
+            // _before={{
+            //   content: '""',
+            //   position: "absolute",
+            //   bottom: "-67%",
+            //   left: "-140%",
+            //   background: "url(/subCloudPink.png)",
+            //   backgroundSize: "cover",
+            //   width: "500px",
+            //   height: "500px",
+            //   opacity: "0.8",
+            // }}
+            // _after={{
+            //   content: '""',
+            //   position: "absolute",
+            //   bottom: "145%",
+            //   left: "-140%",
+            //   background: "url(/subCloudOrange.png)",
+            //   backgroundSize: "cover",
+            //   width: "400px",
+            //   height: "400px",
+            //   opacity: "0.8",
+            // }}
             w="60%"
             direction={{ base: "column", md: "row" }}
             spacing="80px"

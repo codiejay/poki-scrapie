@@ -46,24 +46,41 @@ export const Acts = () => {
       bg="#F9FAF"
       pb="12"
     >
-      <Box maxW="1440px" w="100%" m="0 auto" px="100px" pb="70px">
-        <Flex w="50%" m="0 auto" align="center" justify="center" mb="12">
+      <Box
+        maxW="1440px"
+        w="100%"
+        m="0 auto"
+        px={["10px", "15px", "100px"]}
+        pb="70px"
+      >
+        <Flex
+          w={["100%", "50%"]}
+          m="0 auto"
+          align="center"
+          justify="center"
+          mb="12"
+        >
           <Divider w="20%" orientation="horizontal" borderColor="#D2A63C" />
           <Heading
             fontFamily="secondary"
             fontSize="56px"
             color="#1A202c"
             fontWeight="800"
-            w="60%"
+            w={["100%", "90%", "60%"]}
             textAlign="center"
           >
             What We Do
           </Heading>
           <Divider w="20%" orientation="horizontal" borderColor="#D2A63C" />
         </Flex>
-        <Flex w="100%" gap="30px">
+        <Flex w="100%" gap="30px" flexDir={["column", "column", "row"]}>
           <ImgSlider />
-          <Flex w="50%" flexDir="column" gap="32px">
+          <Flex
+            w={["100%", "50%"]}
+            flexDir="column"
+            gap="32px"
+            mt={["12", "12", "0"]}
+          >
             <Text
               fontSize="20px"
               fontFamily="primary"

@@ -31,7 +31,7 @@ const TeamCard = ({ img, name, position }) => {
   return (
     <Flex
       borderRadius="30px"
-      w="375px"
+      minW={["290px", "320px", "375px"]}
       h="468px"
       bg={`url(${img}) no-repeat center`}
       bgSize="cover"
@@ -75,15 +75,19 @@ export const Team = () => {
         maxW="1440px"
         w="100%"
         m="0 auto"
-        px="100px"
+        px={["10px", "15px", "100px"]}
         display="flex"
         gap="12"
         flexDir="column"
         pt="40px"
         pb="100px"
       >
-        <HStack justifyContent="space-between" alignItems="start">
-          <HStack w="40%" align="start" gap="60px">
+        <HStack
+          justifyContent="space-between"
+          alignItems="start"
+          flexDir={["column", "column", "row"]}
+        >
+          <HStack w={["95%", "95%", "40%"]} align="start" gap="60px">
             <Heading
               fontSize="56px"
               fontFamily="secondary"
@@ -102,7 +106,7 @@ export const Team = () => {
             />
           </HStack>
 
-          <VStack w="50%" spacing={4} align="start" pt="5">
+          <VStack w={["95%", "95%", "50%"]} spacing={4} align="start" pt="5">
             <Text
               fontWeight="400"
               fontFamily="primary"
@@ -120,7 +124,7 @@ export const Team = () => {
             </Text>
           </VStack>
         </HStack>
-        <Flex w="100%" gap="16">
+        <Flex w="100%" gap="16" overflowX="scroll">
           {teamData.map((team, index) => (
             <TeamCard
               key={index}

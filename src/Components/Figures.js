@@ -32,12 +32,16 @@ export const FiguresQuotes = () => {
       bgSize="cover"
       justify="center"
       w="100%"
-      h="206px"
+      h={["auto", "auto", "180px"]}
       align="center"
       borderTop="2px solid #E2E8F0"
       borderBottom="2px solid #E2E8F0"
     >
-      <Flex justify="center" gap="110px">
+      <Flex
+        justify="center"
+        gap={["20px", "20px", "110px"]}
+        flexDir={["column", "column", "row"]}
+      >
         <Figures num="#100m+" text="Money donated" />
         <Figures num="560+" text="Donations Received" />
         <Figures num="120+" text="Successful Campaign" />

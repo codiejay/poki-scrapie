@@ -6,7 +6,6 @@ export const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set true if scrolled more than the window height, false otherwise
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
@@ -14,13 +13,8 @@ export const Header = () => {
       }
     };
 
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      // Clean up the event listener when the component unmounts
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -29,22 +23,32 @@ export const Header = () => {
       align="center"
       justify="space-between"
       py="7px"
-      px="30px"
+      px={["15px", "30px"]} // Responsive padding
       bg={isScrolled ? "rgba(255, 255, 255, 0.6)" : "white"}
-      borderRadius="15px"
+      borderRadius={["0", "15px"]} // No border radius on smaller screens
       boxShadow={isScrolled ? "md" : "sm"}
       border="1px solid #E2E8F0"
       position={isScrolled ? "fixed" : "relative"}
-      top={isScrolled ? "1%" : "0"}
-      left={isScrolled ? "15%" : "0"}
-      width={isScrolled ? "70%" : "100%"}
+      top={isScrolled ? "1%" : "0"} // Adjusted to fix to the top
+      left={isScrolled && ["3%", "15%"]} // Full width on smaller screens
+      width={isScrolled ? ["95%", "100%", "70%"] : "100%"} // Responsive width
       backdropFilter={isScrolled ? "blur(8px)" : "none"}
-      zIndex="1000" // Ensure it stays on top of other content
+      zIndex="1000"
     >
       <Box>
-        <Image w="87px" src="/trefLogo.png" alt="R. H. Foundation" />
+        <Image
+          w={["60px", "87px"]}
+          src="/trefLogo.png"
+          alt="R. H. Foundation"
+        />
       </Box>
-      <Flex fontFamily="primary" fontWeight="500" fontSize="16px" gap="8">
+      <Flex
+        fontFamily="primary"
+        fontWeight="500"
+        fontSize={["12px", "16px"]}
+        gap={["4", "8"]}
+        flexGrow={1}
+      >
         <Link href="/#acts" style={{ textDecoration: "none" }}>
           <Text>What We Do</Text>
         </Link>
@@ -55,21 +59,18 @@ export const Header = () => {
           <Text>Volunteers</Text>
         </Link>
       </Flex>
-      {/* <PrimaryBttn bttnText="Donate now" /> */}
       <Button
         w="fit-content"
         fontFamily="primary"
-        fontSize="15px"
+        fontSize={["12px", "15px"]}
         fontWeight="500"
-        _hover={{
-          bg: "transparent",
-        }}
+        _hover={{ bg: "transparent" }}
         border="1.5px solid"
         bg={isScrolled ? "#D2A63C" : "transparent"}
         borderColor={isScrolled ? "transparent" : "#D2A63C"}
         color={isScrolled ? "white" : "#D2A63C"}
         px="12"
-        h="54px"
+        h={["40px", "54px"]}
         py="0"
       >
         Donate now

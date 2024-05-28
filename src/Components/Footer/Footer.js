@@ -1,5 +1,4 @@
 import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
 import { Subscribe } from "./Subscribe";
 
 export const Footer = () => {
@@ -16,7 +15,7 @@ export const Footer = () => {
         maxW="1440px"
         w="100%"
         m="0 auto"
-        px="100px"
+        px={["10px", "15px", "100px"]}
         display="flex"
         gap="12"
         pb="12"
