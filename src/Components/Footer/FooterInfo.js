@@ -99,7 +99,7 @@ export const FooterInfo = () => {
                 fontWeight="bold"
                 fontFamily="primary"
                 mb={6}
-                textAlign="center"
+                textAlign={["center", "center", "start"]}
               >
                 Contact
               </Text>
@@ -120,7 +120,7 @@ export const FooterInfo = () => {
                 fontWeight="bold"
                 fontFamily="primary"
                 mb={6}
-                textAlign="center"
+                textAlign={["center", "center", "start"]}
               >
                 Follow Us
               </Text>
