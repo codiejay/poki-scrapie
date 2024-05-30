@@ -93,9 +93,10 @@ export const Header = () => {
         onOpen={() => setIsMenuOpen(true)}
         onClose={() => setIsMenuOpen(false)}
         size="2xl"
-        display={["none", "flex", "flex"]}
+        display={["flex", "none", "none"]}
       >
         <MenuButton
+          display={["flex", "none", "none"]}
           as={Button}
           p="3"
           w="fit-content"
