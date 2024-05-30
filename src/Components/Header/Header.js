@@ -60,7 +60,7 @@ export const Header = () => {
         fontWeight="500"
         fontSize={["12px", "16px"]}
         gap={["4", "8"]}
-        flexGrow={1}
+        // flexGrow={1}
       >
         <Link href="/#acts" style={{ textDecoration: "none" }}>
           <Text>What We Do</Text>
