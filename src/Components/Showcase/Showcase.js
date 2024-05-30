@@ -12,8 +12,12 @@ import { ShowcaseModal } from "../Modals/ShowcaseModal";
 export const Showcase = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Flex pb="24px" pt="80px" w="100%">
-      <HStack w="100%" gap="40px" flexDir={["column", "row"]}>
+    <Flex pb="24px" pt={["20px", "30px", "80px"]} w="100%">
+      <HStack
+        w="100%"
+        gap={["24px", "24px", "40px"]}
+        flexDir={["column", "row"]}
+      >
         <Flex flexDir="column" w={["100%", "50%"]} gap="32px">
           <Heading
             fontFamily="secondary"
@@ -31,7 +35,7 @@ export const Showcase = () => {
             Every donation helps a child get closer to their dreams, Give today
             to empower tomorrow’s leaders
           </Text>
-          <PrimaryBttn w="1px" bttnText="Donate now" />
+          <PrimaryBttn bttnText="Donate now" />
         </Flex>
         <Flex
           h="477px"

@@ -33,11 +33,21 @@ export const JoinSection = () => {
           color="white"
           align="center"
           justify={["start", "start", "center"]}
+          w={["84%", "84%", "100%"]}
+          m="0 auto"
         >
-          <Heading fontFamily="secondary" fontSize="36px">
+          <Heading
+            fontFamily="secondary"
+            fontSize={["24px", "24px", "36px"]}
+            textAlign="center"
+          >
             Together, We Can Make Education Accessible
           </Heading>
-          <Text fontFamily="primary">
+          <Text
+            fontFamily="primary"
+            fontSize={["14px", "14px", "20px"]}
+            textAlign="center"
+          >
             Help us break down barriers to education for children everywhere
           </Text>
           <Flex gap="16px" mt="25px">

@@ -60,10 +60,14 @@ export const Acts = () => {
           justify="center"
           mb="12"
         >
-          <Divider w="20%" orientation="horizontal" borderColor="#D2A63C" />
+          <Divider
+            w={["35%", "35%", "56px"]}
+            orientation="horizontal"
+            borderColor="#D2A63C"
+          />
           <Heading
             fontFamily="secondary"
-            fontSize="56px"
+            fontSize={["24px", "24px", "56px"]}
             color="#1A202c"
             fontWeight="800"
             w={["100%", "90%", "60%"]}
@@ -71,7 +75,11 @@ export const Acts = () => {
           >
             What We Do
           </Heading>
-          <Divider w="20%" orientation="horizontal" borderColor="#D2A63C" />
+          <Divider
+            w={["35%", "35%", "56px"]}
+            orientation="horizontal"
+            borderColor="#D2A63C"
+          />
         </Flex>
         <Flex w="100%" gap="30px" flexDir={["column", "column", "row"]}>
           <ImgSlider />

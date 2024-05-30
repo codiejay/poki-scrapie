@@ -81,6 +81,7 @@ export const Subscribe = () => {
           </FormControl>
         </VStack>
         <Box
+          display={["none", "none", "block"]}
           bg="url(/subscribe.png) "
           w={["370px", "370px", "512px"]}
           h="269px"

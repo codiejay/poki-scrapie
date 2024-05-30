@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 
 export const Figures = ({ num, text }) => {
   return (
@@ -7,7 +7,7 @@ export const Figures = ({ num, text }) => {
         fontFamily="secondary"
         fontWeight="700"
         color="#1A202C"
-        fontSize="40px"
+        fontSize={["24px", "24px", "40px"]}
       >
         {num}
       </Heading>
@@ -15,13 +15,14 @@ export const Figures = ({ num, text }) => {
         fontFamily="primary"
         fontWeight="500"
         color="#1A202C"
-        fontSize="18px"
+        fontSize={["12px", "12px", "18px"]}
       >
         {text}
       </Text>
     </Flex>
   );
 };
+
 export const FiguresQuotes = () => {
   return (
     <Flex
@@ -37,16 +38,18 @@ export const FiguresQuotes = () => {
       borderTop="2px solid #E2E8F0"
       borderBottom="2px solid #E2E8F0"
     >
-      <Flex
-        justify="center"
-        gap={["20px", "20px", "110px"]}
-        flexDir={["column", "column", "row"]}
+      <Box
+        display="grid"
+        gridTemplateColumns={["1fr 1fr", "1fr 1fr", "repeat(4, 1fr)"]}
+        gap="20px"
+        w="100%"
+        justifyItems="center"
       >
-        <Figures num="#100m+" text="Money donated" />
+        <Figures num="#10m+" text="Money Donated" />
         <Figures num="560+" text="Donations Received" />
         <Figures num="120+" text="Successful Campaign" />
-        <Figures num="#100m+" text="Charity in last year" />
-      </Flex>
+        <Figures num="#10m+" text="Charity in last year" />
+      </Box>
     </Flex>
   );
 };

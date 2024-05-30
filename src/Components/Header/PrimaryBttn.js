@@ -14,8 +14,8 @@ export function PrimaryBttn({ bttnText, fontWeight, props }) {
         bg: "#e0a03f",
       }}
       px="12"
-      h="54px"
-      py="0"
+      h={["32px", "32px", "54px"]}
+      py={["6px", "6px", "0"]}
       {...props}
     >
       {bttnText}
@@ -33,7 +33,8 @@ export function SecondaryBttn({ bttnText, ...props }) {
       fontWeight="400"
       bg="white"
       px="12"
-      h="54px"
+      h={["32px", "32px", "54px"]}
+      py={["6px", "6px", "0"]}
       {...props}
     >
       {bttnText}

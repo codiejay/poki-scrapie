@@ -80,7 +80,7 @@ export const Team = () => {
         gap="12"
         flexDir="column"
         pt="40px"
-        pb="100px"
+        pb={["40px", "40px", "100px"]}
       >
         <HStack
           justifyContent="space-between"

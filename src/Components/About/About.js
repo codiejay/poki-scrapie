@@ -28,20 +28,20 @@ export const About = () => {
         gap="12"
         pb="12"
       >
-        <VStack width="100%" align="start" spacing="40px">
+        <VStack width="100%" align="start" spacing={["0px", "20px", "40px"]}>
           <HStack w={["95%", "95%", "70%"]} align="center" spacing="60px">
             <Heading
               fontFamily="secondary"
               fontWeight="600"
               color="#1A202C"
-              fontSize="40px"
+              fontSize={["24px", "24px", "40px"]}
               mb="6"
-              w={["100%", "100%", "auto"]}
+              w={["50%", "100%", "auto"]}
             >
               About Us TREF
             </Heading>
             <Divider
-              w={["30%", "30%", "373px"]}
+              w={["60%", "30%", "373px"]}
               borderColor="#D2A63C"
               opacity="0.5"
               mt="-3"
@@ -50,11 +50,16 @@ export const About = () => {
           <HStack
             w="100%"
             justify="space-between"
-            gap="47px"
+            gap={["12px", "12px", "47px"]}
             flexDir={["column", "column", "row"]}
+            align="start"
           >
             <VStack w={["95%", "95%", "80%"]} gap="40px">
-              <Text fontSize="20px" color="#4A5568" fontFamily="primary">
+              <Text
+                fontSize={["14px", "14px", "20px"]}
+                color="#4A5568"
+                fontFamily="primary"
+              >
                 Every child deserves a healthy start in life, the opportunity to
                 learn and protection from harm. Yet, an estimated 5.4 million
                 children under age 5 still die each year from preventable causes
@@ -62,7 +67,11 @@ export const About = () => {
                 learn and protection from harm. Yet, an estimated 5.4 million
                 children under age 5 still die each year from preventable causes
               </Text>
-              <Text fontSize="20px" color="#4A5568" fontFamily="primary">
+              <Text
+                fontSize={["14px", "14px", "20px"]}
+                color="#4A5568"
+                fontFamily="primary"
+              >
                 Every child deserves a healthy start in life, the opportunity to
                 learn and protection from harm. Yet, an estimated 5.4 million
                 children under age 5 still die each year from preventable
@@ -74,8 +83,8 @@ export const About = () => {
             </VStack>
 
             <Box
-              w="100%"
-              h="469px"
+              w={["378px", "378px", "100%"]}
+              h={["278px", "278px", "469px"]}
               bg="url(/founder.png) no-repeat center"
               bgSize="contain"
               alt="Founder of the organization"
