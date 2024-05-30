@@ -42,7 +42,7 @@ export const Header = () => {
       border="1px solid #E2E8F0"
       position={isScrolled ? "fixed" : "relative"}
       top={isScrolled ? "1%" : "0"} // Adjusted to fix to the top
-      left={isScrolled && ["10%", "15%"]} // Full width on smaller screens
+      left={isScrolled && ["2%", "15%"]} // Full width on smaller screens
       width={isScrolled ? ["95%", "100%", "70%"] : "100%"} // Responsive width
       backdropFilter={isScrolled ? "blur(8px)" : "none"}
       zIndex="1000"
