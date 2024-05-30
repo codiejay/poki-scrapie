@@ -18,7 +18,7 @@ export const Subscribe = () => {
         w="100%"
         align={["start", "start", "end"]}
         borderBottom="1px solid white"
-        pb="100px"
+        pb={["25px", "30px", "100px"]}
         flexDir={["column", "column", "row"]}
       >
         <VStack

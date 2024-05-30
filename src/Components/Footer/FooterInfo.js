@@ -21,10 +21,25 @@ export const FooterInfo = () => {
         gap="12"
         flexDir="column"
       >
-        <Flex direction={{ base: "column", md: "row" }} gap="20px">
-          <Box w={["95%", "95%", "50%"]}>
-            <Image w="87px" src="/whileLogo.png" alt="R. H. Foundation" />
-            <Text w="60%" fontFamily="primary" fontSize="14px">
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          gap="20px"
+          align={["center", "center", "start"]}
+        >
+          <Box w={["95%", "95%", "50%"]} align={["center", "center", "start"]}>
+            <Image
+              w="87px"
+              src="/whileLogo.png"
+              alt="R. H. Foundation"
+              m={["0 auto", "0 auto", "0"]}
+              mb={["20px", "20px", "0"]}
+            />
+            <Text
+              w={["100%", "100%", "60%"]}
+              fontFamily="primary"
+              fontSize="14px"
+              textAlign={["center", "center", "initial"]}
+            >
               Empowering Future Leaders: Providing Quality Education and
               Lifelong Learning Opportunities for Every Childs Success
             </Text>
@@ -53,19 +68,24 @@ export const FooterInfo = () => {
             //   height: "400px",
             //   opacity: "0.8",
             // }}
-            w="60%"
+            w={["95%", "95%", "60%"]}
             direction={{ base: "column", md: "row" }}
             spacing="80px"
           >
             <Box>
-              <Text fontWeight="bold" fontFamily="primary" mb={6}>
+              <Text
+                fontWeight="bold"
+                fontFamily="primary"
+                mb={6}
+                textAlign={["center", "center", "start"]}
+              >
                 Knowledge Vault
               </Text>
               <VStack
                 fontSize="15px"
                 fontFamily="primary"
                 spacing={2}
-                align="start"
+                align={["center", "center", "start"]}
               >
                 <Link>What We Do</Link>
                 <Link>About Us</Link>
@@ -75,14 +95,19 @@ export const FooterInfo = () => {
               </VStack>
             </Box>
             <Box>
-              <Text fontWeight="bold" fontFamily="primary" mb={6}>
+              <Text
+                fontWeight="bold"
+                fontFamily="primary"
+                mb={6}
+                textAlign="center"
+              >
                 Contact
               </Text>
               <VStack
                 fontSize="15px"
                 fontFamily="primary"
                 spacing={2}
-                align="start"
+                align={["center", "center", "start"]}
               >
                 {" "}
                 <Text>01-700-2000</Text>
@@ -91,10 +116,15 @@ export const FooterInfo = () => {
               </VStack>
             </Box>
             <Box>
-              <Text fontWeight="bold" fontFamily="primary" mb={6}>
+              <Text
+                fontWeight="bold"
+                fontFamily="primary"
+                mb={6}
+                textAlign="center"
+              >
                 Follow Us
               </Text>
-              <Flex gap={4}>
+              <Flex gap={4} justify={["center", "center", "inherit"]}>
                 <Box
                   bg="url(/facebook.png) no-repeat center"
                   boxSize="48px"
@@ -134,6 +164,7 @@ export const FooterInfo = () => {
           justify="space-between"
           w="100%"
           pos="relative"
+          flexDir={["column", "column", "row"]}
         >
           <Text textAlign="center">© TREF 2024. All right reserved</Text>
           <Text
