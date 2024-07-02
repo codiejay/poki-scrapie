@@ -1,5 +1,4 @@
 import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/react";
-import React from "react";
 
 export const ShowcaseModal = ({ isOpen, onClose }) => {
   return (
@@ -9,7 +8,7 @@ export const ShowcaseModal = ({ isOpen, onClose }) => {
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/dlZIrU_nrRM"
+          src="https://youtu.be/oS_MogDasbE"
           title="Ric Hassani - Love Again (Official Video)"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
