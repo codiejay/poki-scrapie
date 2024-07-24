@@ -1,7 +1,6 @@
 import { Button } from "@chakra-ui/react";
 
-export function PrimaryBttn({ bttnText, fontWeight, props }) {
-  console.log(props);
+export function PrimaryBttn({ bttnText, fontWeight, props, as, href }) {
   return (
     <Button
       w="fit-content"
@@ -16,7 +15,8 @@ export function PrimaryBttn({ bttnText, fontWeight, props }) {
       px="12"
       h={["32px", "32px", "54px"]}
       py={["6px", "6px", "0"]}
-      {...props}
+      as={as}
+      href={href}
     >
       {bttnText}
     </Button>

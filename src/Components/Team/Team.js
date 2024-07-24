@@ -1,8 +1,8 @@
 import {
   Box,
-  Button,
   Divider,
   Flex,
+  Grid,
   HStack,
   Heading,
   Text,
@@ -11,19 +11,24 @@ import {
 
 const teamData = [
   {
-    img: "https://images.squarespace-cdn.com/content/v1/5324bf63e4b05fc1fc6ea99d/1621606520680-ETO9ZXXY5FIQ1YDO4FOI/1620918108028_3P0A6482-Edit.jpg",
+    img: "/ricTeam.jpeg",
     name: "Ric Hassani",
-    position: "Executive Volunteer",
+    position: "Founder TREF",
   },
   {
-    img: "https://images.squarespace-cdn.com/content/v1/5324bf63e4b05fc1fc6ea99d/1621606520680-ETO9ZXXY5FIQ1YDO4FOI/1620918108028_3P0A6482-Edit.jpg",
-    name: "Ric Hassani",
-    position: "Executive Volunteer",
+    img: "kenTeam.jpeg",
+    name: "Kenneth Godwin",
+    position: "Operations Manager,",
   },
   {
-    img: "https://images.squarespace-cdn.com/content/v1/5324bf63e4b05fc1fc6ea99d/1621606520680-ETO9ZXXY5FIQ1YDO4FOI/1620918108028_3P0A6482-Edit.jpg",
-    name: "Ric Hassani",
-    position: "Executive Volunteer",
+    img: "timiTeam.jpeg",
+    name: "Timi Okuselu",
+    position: "Finance Manager",
+  },
+  {
+    img: "enitanTeam.jpeg",
+    name: "Enitan Feyisara Aregbesolaani",
+    position: "Social Media Manager",
   },
 ];
 
@@ -124,7 +129,11 @@ export const Team = () => {
             </Text>
           </VStack>
         </HStack>
-        <Flex w="100%" gap="16" overflowX="scroll">
+        <Grid
+          w="100%"
+          gap="16"
+          gridTemplateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]}
+        >
           {teamData.map((team, index) => (
             <TeamCard
               key={index}
@@ -133,20 +142,7 @@ export const Team = () => {
               position={team.position}
             />
           ))}
-        </Flex>
-        <Flex w="100%" justify="center">
-          <Button
-            w="fit-content"
-            bg="transparent"
-            color="#1A202C"
-            border="1px solid #C1C3C7"
-            fontSize="12px"
-            px="14"
-            height="42px"
-          >
-            View More
-          </Button>
-        </Flex>
+        </Grid>
       </Box>
     </Flex>
   );

@@ -3,12 +3,12 @@ import {
   Button,
   Flex,
   Image,
-  Link,
   Menu,
   MenuButton,
   MenuList,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineMenu } from "react-icons/md";
@@ -48,11 +48,13 @@ export const Header = () => {
       zIndex="1000"
     >
       <Box>
-        <Image
-          w={["60px", "87px"]}
-          src="/trefLogo.png"
-          alt="R. H. Foundation"
-        />
+        <Box as={Link} href="/">
+          <Image
+            w={["60px", "87px"]}
+            src="/trefLogo.png"
+            alt="R. H. Foundation"
+          />
+        </Box>
       </Box>
       <Flex
         display={["none", "flex", "flex"]}
@@ -86,6 +88,8 @@ export const Header = () => {
         px="12"
         h={["40px", "54px"]}
         py="0"
+        as={Link}
+        href="/donate"
       >
         Donate now
       </Button>
@@ -164,6 +168,8 @@ export const Header = () => {
             px="12"
             h={["40px", "54px"]}
             py="0"
+            as={Link}
+            href="/donate"
           >
             Donate now
           </Button>

@@ -6,6 +6,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import { PrimaryBttn } from "../Header/PrimaryBttn";
 import { ShowcaseModal } from "../Modals/ShowcaseModal";
 
@@ -35,7 +36,7 @@ export const Showcase = () => {
             Every donation helps a child get closer to their dreams, Give today
             to empower tomorrow’s leaders
           </Text>
-          <PrimaryBttn bttnText="Donate now" />
+          <PrimaryBttn as={Link} href="/donate" bttnText="Donate now" />
         </Flex>
         <Flex
           h="477px"

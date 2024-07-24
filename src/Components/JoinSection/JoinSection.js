@@ -1,4 +1,5 @@
 import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import Link from "next/link";
 import { PrimaryBttn, SecondaryBttn } from "../Header/PrimaryBttn";
 
 export const JoinSection = () => {
@@ -51,7 +52,7 @@ export const JoinSection = () => {
             Help us break down barriers to education for children everywhere
           </Text>
           <Flex gap="16px" mt="25px">
-            <PrimaryBttn bttnText="Donate now" />
+            <PrimaryBttn bttnText="Donate now" as={Link} href="/donate" />
             <SecondaryBttn bttnText="Join Volunteer" />
           </Flex>
         </VStack>
