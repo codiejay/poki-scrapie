@@ -24,6 +24,7 @@
     "react-router-dom": "^6.25.1"
   },
   "devDependencies": {
+    "@locator/babel-jsx": "^0.4.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.1"
   }

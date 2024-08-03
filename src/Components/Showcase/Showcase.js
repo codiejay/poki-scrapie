@@ -46,15 +46,12 @@ export const Showcase = () => {
           bg="url(/showcaseImg.png) no-repeat center center"
           alt="Children in a classroom"
           borderRadius="12px"
+          onClick={() => {
+            onOpen();
+          }}
+          cursor="pointer"
         >
-          <Img
-            onClick={() => {
-              onOpen();
-            }}
-            cursor="pointer"
-            src="/play.png"
-            boxSize="40px"
-          />
+          <Img cursor="pointer" src="/play.png" boxSize="40px" />
         </Flex>
       </HStack>
       <ShowcaseModal isOpen={isOpen} onClose={onClose} />

@@ -31,10 +31,10 @@ export const Donate = () => {
             Please make your donation using any of this options
           </Heading>
         </Flex>
-        <Flex w="100%" mt={["2px", "50px"]}>
+        <Flex w="100%" mt={["30px", "50px"]}>
           <Flex
             h={["145px", "262px"]}
-            w={["212px", "502px"]}
+            w={["282px", "502px"]}
             bg="url(/donateFlutterwave.svg) no-repeat center center"
             bgSize="contain"
             alt="Donate with Flutterwave"
