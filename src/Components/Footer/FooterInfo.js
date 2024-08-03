@@ -112,7 +112,9 @@ export const FooterInfo = () => {
                 {" "}
                 <Text>01-700-2000</Text>
                 <Link href="mailto:partner@tref.com">partner@tref.com</Link>
-                <Link href="mailto:tref@gmail.com">tref@gmail.com</Link>
+                <Link href="mailto:wearetref@gmail.com">
+                  wearetref@gmail.com
+                </Link>
               </VStack>
             </Box>
             <Box>

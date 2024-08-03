@@ -18,7 +18,7 @@ const teamData = [
   {
     img: "kenTeam.jpeg",
     name: "Kenneth Godwin",
-    position: "Operations Manager,",
+    position: "Operations Manager",
   },
   {
     img: "timiTeam.jpeg",
