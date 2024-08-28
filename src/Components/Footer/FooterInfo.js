@@ -110,8 +110,9 @@ export const FooterInfo = () => {
                 align={["center", "center", "start"]}
               >
                 {" "}
-                <Text>01-700-2000</Text>
-                <Link href="mailto:partner@tref.com">partner@tref.com</Link>
+                <Text as={Link} href="tel:+234 812 850 6580">
+                  +234 812 850 6580
+                </Text>
                 <Link href="mailto:wearetref@gmail.com">
                   wearetref@gmail.com
                 </Link>
@@ -128,20 +129,13 @@ export const FooterInfo = () => {
               </Text>
               <Flex gap={4} justify={["center", "center", "inherit"]}>
                 <Box
-                  bg="url(/facebook.png) no-repeat center"
-                  boxSize="48px"
-                  bgSize="cover"
-                  onClick={() => {
-                    window.open("https://www.facebook.com/");
-                  }}
-                  cursor="pointer"
-                />
-                <Box
                   bg="url(/Twitter.png) no-repeat center"
                   boxSize="48px"
                   bgSize="cover"
                   onClick={() => {
-                    window.open("https://www.facebook.com/");
+                    window.open(
+                      "https://x.com/wearetref?s=11&t=8smGkc8Neq4XoD-3oS2RLA"
+                    );
                   }}
                   cursor="pointer"
                 />
@@ -150,7 +144,9 @@ export const FooterInfo = () => {
                   boxSize="48px"
                   bgSize="cover"
                   onClick={() => {
-                    window.open("https://www.facebook.com/");
+                    window.open(
+                      "https://www.instagram.com/wearetref?igsh=aDkxajMxbDF6bGtx"
+                    );
                   }}
                   cursor="pointer"
                 />

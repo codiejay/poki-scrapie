@@ -1,4 +1,5 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
+import { NewsTicker } from "./Ticker";
 
 export const Figures = ({ num, text }) => {
   return (
@@ -26,19 +27,19 @@ export const Figures = ({ num, text }) => {
 export const FiguresQuotes = () => {
   return (
     <Flex
-      px="50px"
+      px="0"
       py="20px"
-      bg="url(/fgBg.png)"
+      // bg="url(/fgBg.png)"
       bgPos="center"
       bgSize="cover"
       justify="center"
       w="100%"
       h={["auto", "auto", "180px"]}
       align="center"
-      borderTop="2px solid #E2E8F0"
-      borderBottom="2px solid #E2E8F0"
+      // borderTop="2px solid #E2E8F0"
+      // borderBottom="2px solid #E2E8F0"
     >
-      <Box
+      {/* <Box
         display="grid"
         // gridTemplateColumns={["1fr 1fr", "1fr 1fr", "repeat(4, 1fr)"]}
         gap="20px"
@@ -71,7 +72,14 @@ export const FiguresQuotes = () => {
         <Figures num="560+" text="Donations Received" />
         <Figures num="120+" text="Successful Campaign" />
         <Figures num="#10m+" text="Charity in last year" /> */}
-      </Box>
+      {/* </Box> */}
+      <NewsTicker
+        text={[
+          "Licensed by the Lagos Universal Basic Education board",
+          "***",
+          "We eagerly await your donations ❤️",
+        ]}
+      />
     </Flex>
   );
 };
