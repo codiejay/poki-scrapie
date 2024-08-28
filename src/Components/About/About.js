@@ -59,26 +59,33 @@ export const About = () => {
                 fontSize={["14px", "14px", "20px"]}
                 color="#4A5568"
                 fontFamily="primary"
+                fontWeight="medium"
               >
-                Every child deserves a healthy start in life, the opportunity to
-                learn and protection from harm. Yet, an estimated 5.4 million
-                children under age 5 still die each year from preventable causes
-                Every child deserves a healthy start in life, the opportunity to
-                learn and protection from harm. Yet, an estimated 5.4 million
-                children under age 5 still die each year from preventable causes
+                Ric Hassani is a Nigerian born Pop-African singer and
+                songwriter. In 2012, Ric released his first single called
+                &apos;Dance Dance Baby Dance. He then released a follow-up
+                single titled &apos;Double Double&apos;. <br /> In September
+                2015, he became the first Nigerian Artist to headline the Lake
+                of Stars Festival in Lilongwe Malawi, along-side Uhuru and Toya
+                Delazy. He released his first Album Compilation called; African
+                Tour Select Singles 2015. The following month, he released an
+                EP, a five track compilation of acoustic versions of his
+                pre-recorded music including fan favourites like Joy, Stay and
+                Depression. He has gone further to release two albums, The
+                Prince I Became and Afro Love. The success of his music journey
+                has lead him to tour over 30 countries performing his music.
               </Text>
               <Text
                 fontSize={["14px", "14px", "20px"]}
                 color="#4A5568"
                 fontFamily="primary"
+                fontWeight="medium"
               >
-                Every child deserves a healthy start in life, the opportunity to
-                learn and protection from harm. Yet, an estimated 5.4 million
-                children under age 5 still die each year from preventable
-                causes, Every child deserves a healthy start in life, the
-                opportunity to learn and protection from harm. Yet, an estimated
-                5.4 million children under age 5 still die each year from
-                preventable causes
+                Ric Hassani is very passionate about education. Coming from an
+                educational background, his parent were both professors. This
+                passion in education drove him to acquire his Bsc in Economics
+                at the Covenant University and Masters degree in the University
+                of Surrey England with a PhD on hold.
               </Text>
             </VStack>
 

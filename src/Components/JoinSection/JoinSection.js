@@ -53,7 +53,11 @@ export const JoinSection = () => {
           </Text>
           <Flex gap="16px" mt="25px">
             <PrimaryBttn bttnText="Donate now" as={Link} href="/donate" />
-            <SecondaryBttn bttnText="Join Volunteer" />
+            <SecondaryBttn
+              as={Link}
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeEamw8NbNWrDeSYIxeDHXxTJLFHh9HnxQ8rbtKKWYI7ATRVQ/viewform?usp=sf_link"
+              bttnText="Join Volunteers"
+            />
           </Flex>
         </VStack>
       </Flex>

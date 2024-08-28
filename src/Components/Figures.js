@@ -40,15 +40,37 @@ export const FiguresQuotes = () => {
     >
       <Box
         display="grid"
-        gridTemplateColumns={["1fr 1fr", "1fr 1fr", "repeat(4, 1fr)"]}
+        // gridTemplateColumns={["1fr 1fr", "1fr 1fr", "repeat(4, 1fr)"]}
         gap="20px"
         w="100%"
         justifyItems="center"
       >
-        <Figures num="#10m+" text="Money Donated" />
+        <Flex
+          gap="24px"
+          flexDir="column"
+          justify="center"
+          align="left"
+          w="100%"
+        >
+          <Heading
+            color="#1A202C"
+            fontFamily="primary"
+            fontSize={["12px", "16px", "24px"]}
+          >
+            We eagerly await your donations ❤️
+          </Heading>
+          <Heading
+            color="#1A202C"
+            fontFamily="primary"
+            fontSize={["16px", "24px", "38px"]}
+          >
+            Licensed by Lagos Education board
+          </Heading>
+        </Flex>
+        {/* <Figures num="#10m+" text="Money Donated" />
         <Figures num="560+" text="Donations Received" />
         <Figures num="120+" text="Successful Campaign" />
-        <Figures num="#10m+" text="Charity in last year" />
+        <Figures num="#10m+" text="Charity in last year" /> */}
       </Box>
     </Flex>
   );

@@ -27,7 +27,7 @@ const teamData = [
   },
   {
     img: "enitanTeam.jpeg",
-    name: "Enitan Feyisara Aregbesolaani",
+    name: "Enitan Feyisara Aregbesola",
     position: "Social Media Manager",
   },
 ];

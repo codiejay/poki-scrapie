@@ -95,14 +95,15 @@ export const Acts = () => {
               fontWeight="500"
               colo="#495568"
             >
-              Every child deserves a healthy start in life, the opportunity to
-              learn and protection from harm. Yet, an estimated 5.4 million
-              children under age 5 still die each year from preventable causes
+              We are dedicated to creating a brighter future by providing
+              educational opportunities to underprivileged children. Our mission
+              is to ensure that every child has the chance to learn, grow, and
+              thrive, regardless of their financial circumstances.
             </Text>
             <List spacing="19px">
-              <ActsList act="Cover the school fees for children who cannot afford them." />
-              <ActsList act="Bring hope and opportunities to underprivileged children." />
-              <ActsList act="Ensure children receive a quality education." />
+              <ActsList act="Cover the school fees for students who cannot afford them." />
+              <ActsList act="Bring hope and opportunities to underprivileged students." />
+              <ActsList act="Ensure students receive a quality education." />
               <ActsList act="Cultivate skilled educators who can make a global impact." />
               <ActsList act="Help bring children off the streets and into the classroom." />
             </List>

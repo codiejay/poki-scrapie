@@ -29,7 +29,7 @@ export const FooterInfo = () => {
           <Box w={["95%", "95%", "50%"]} align={["center", "center", "start"]}>
             <Image
               w="87px"
-              src="/whileLogo.png"
+              src="/whiteLogo.svg"
               alt="R. H. Foundation"
               m={["0 auto", "0 auto", "0"]}
               mb={["20px", "20px", "0"]}
