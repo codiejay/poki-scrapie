@@ -91,9 +91,9 @@ export const About = () => {
 
             <Box
               w={["378px", "378px", "100%"]}
-              h={["278px", "278px", "469px"]}
-              bg="url(/founder.png) no-repeat center"
-              bgSize="contain"
+              h={["278px", "278px", "100%"]}
+              bg="url(/founder.JPG) no-repeat top"
+              bgSize="cover"
               alt="Founder of the organization"
             />
           </HStack>
